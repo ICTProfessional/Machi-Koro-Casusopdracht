@@ -8,5 +8,7 @@ namespace Machi_Koro_Casusopdracht
 {
     class Gebouw : Kaart
     {
+        public List<int> Rolwaarden { get; set; }
+        public int BetrokkenMunten { get; set; }
     }
 }

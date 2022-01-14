@@ -54,7 +54,7 @@
     <Compile Include="NeemMuntKiezen.cs" />
     <Compile Include="NeemMuntSpeler.cs" />
     <Compile Include="RollerKrijgtMunt.cs" />
-    <Compile Include="Rolsysteem.cs" />
+    <Compile Include="RolSysteem.cs" />
     <Compile Include="Kaart.cs" />
     <Compile Include="Spel.cs" />
     <Compile Include="Speler.cs" />

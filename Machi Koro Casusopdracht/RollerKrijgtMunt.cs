@@ -8,5 +8,6 @@ namespace Machi_Koro_Casusopdracht
 {
     class RollerKrijgtMunt : Gebouw 
     {
+        public int BetrokkenIcoon { get; set; }
     }
 }

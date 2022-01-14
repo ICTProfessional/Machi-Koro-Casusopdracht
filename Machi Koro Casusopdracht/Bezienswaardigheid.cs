@@ -8,5 +8,6 @@ namespace Machi_Koro_Casusopdracht
 {
     class Bezienswaardigheid : Kaart
     {
+        public bool IsActief { get; set; }
     }
 }
