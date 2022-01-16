@@ -15,6 +15,6 @@ namespace Machi_Koro_Casusopdracht
         public int Icoon { get; set; }
         abstract public int BetrokkenMunten { get; set; }
 
-        abstract public void DoeEffect();
+        abstract public void DoeEffect(Spel _spel);
     }
 }
