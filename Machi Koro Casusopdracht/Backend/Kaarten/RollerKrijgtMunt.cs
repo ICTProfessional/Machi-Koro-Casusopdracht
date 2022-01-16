@@ -8,7 +8,7 @@ namespace Machi_Koro_Casusopdracht
 {
     class RollerKrijgtMunt : Gebouw 
     {
-        // Geeft een aantal munten aan de speler
+        // Geeft een aantal munten aan de speler als hij aan de beurt is
         public int ?BetrokkenIcoon { get; set; }
 
         public override void DoeEffect(Spel _spel)
