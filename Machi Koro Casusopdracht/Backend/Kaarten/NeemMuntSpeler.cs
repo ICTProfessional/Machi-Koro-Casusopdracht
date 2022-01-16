@@ -11,6 +11,11 @@ namespace Machi_Koro_Casusopdracht
         // Neemt een munt van de persoon die heeft gerolt en geeft het aan de eigenaar van de kaart
         public override void DoeEffect(Spel _spel)
         {
+            // Geeft een extra muntje als speler het winkelcentrum heeft gekocht
+            if (_spel.GetHuidigeSpeler().HeeftWinkelCentrum())
+            {
+                BetrokkenMunten++;
+            }
             // Een kale kip kan niet meer geplukt worden, toch? ;)
             if (_spel.GetHuidigeSpeler().Geld - BetrokkenMunten < 0)
             {
