@@ -60,18 +60,74 @@ namespace Machi_Koro_Casusopdracht
         }
         public void WisselKaarten(Kaart _kaart1, Kaart _kaart2)
         {
-
+            
         }
         /// Geeft terug welke speler de eigenaar is van een kaart
         public Speler GetEigenaarKaart(Kaart _kaart)
         {
-
+            foreach (Speler _speler in Spelers)
+            {
+                foreach (Kaart __kaart in _speler.Gebouwen)
+                {
+                    if (__kaart == _kaart)
+                    {
+                        return _speler;
+                    }
+                }
+            }
         }
         /// Haalt kaarten van spelers die een effect doen
         public List<Kaart> GetActieveKaartenVanSpeler(Speler _speler)
         {
+            List<Kaart> actieveKaarten = _speler.Gebouwen;
+            List<Kaart> kaartClone = actieveKaarten;
+            foreach (Kaart _kaart in kaartClone)
+            {
+                switch (_kaart.GetType().Name)
+	            {
+                    case "NeemMuntSpeler":
+                        if(_speler == GetHuidigeSpeler())
+                        {
+                            actieveKaarten.Remove(_kaart);
+                        }
+                        break;
+                    case "RollerKrijgtMunt":
+                        if(_speler != GetHuidigeSpeler())
+                        {
+                            actieveKaarten.Remove(_kaart);
+                        }
+                    case "WisselKaartKiezen":
+                        if(_speler != GetHuidigeSpeler())
+                        {
+                            actieveKaarten.Remove(_kaart);
+                        }
+                    case "NeemMuntIedereen":
+                        if(_speler != GetHuidigeSpeler())
+                        {
+                            actieveKaarten.Remove(_kaart);
+                        }
+                    case "NeemMuntKiezen":
+                        if(_speler != GetHuidigeSpeler())
+                        {
+                            actieveKaarten.Remove(_kaart);
+                        }
+                        break;
+		            default:
+                    break;
 
+	            }
+            }
+            kaartClone = actieveKaarten;
+            foreach (Kaart _kaart in kaartClone)
+            {
+                if(!_kaart.Rolwaarden.Contains(RolSysteem.GetDobbelWaarde()))
+                {
+                    actieveKaarten.Remove(_kaart);
+                }
+            }
+            return actieveKaarten;
         }
+
         public void NeemMuntKiezenEffect(Speler _gekozenSpeler)
         {
 
