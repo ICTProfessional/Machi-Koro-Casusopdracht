@@ -60,7 +60,13 @@ namespace Machi_Koro_Casusopdracht
         }
         public void WisselKaarten(Kaart _kaart1, Kaart _kaart2)
         {
-            
+            Speler eigenaar1 = GetEigenaarKaart(_kaart1);
+            Speler eigenaar2 = GetEigenaarKaart(_kaart2);
+
+            eigenaar1.Gebouwen.Add(_kaart2);
+            eigenaar2.Gebouwen.Add(_kaart1);
+            eigenaar1.Gebouwen.Remove(_kaart1);
+            eigenaar2.Gebouwen.Remove(_kaart2);            
         }
         /// Geeft terug welke speler de eigenaar is van een kaart
         public Speler GetEigenaarKaart(Kaart _kaart)
@@ -128,9 +134,19 @@ namespace Machi_Koro_Casusopdracht
             return actieveKaarten;
         }
 
-        public void NeemMuntKiezenEffect(Speler _gekozenSpeler)
+        public void NeemMuntKiezenEffect(Speler _gekozenSpeler, Speler _eigenaarKaart)
         {
-
+            if(_gekozenSpeler.Geld >= 5)
+            {
+            _gekozenSpeler.Geld -= 5;
+            _eigenaarKaart.Geld += 5;
+            }
+            else
+            {
+                int a = _gekozenSpeler.Geld;
+                _gekozenSpeler.Geld = 0;
+                _eigenaarKaart += a;
+            }
         }
     }
 }
