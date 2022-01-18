@@ -48,14 +48,14 @@ namespace Machi_Koro_Casusopdracht
                 NeemMuntSpeler café = new NeemMuntSpeler();
                 NeemMuntSpeler restaurant = new NeemMuntSpeler();
 
-                List.add(graanveld,appelboomgaard,veehouderij,mijn,bos,bakkerij,supermarkt,Kaasfabriek,meubelfabriek,groentenEnFruitmarkt,café,restaurant);
+                KaartenPot.add(graanveld,appelboomgaard,veehouderij,mijn,bos,bakkerij,supermarkt,Kaasfabriek,meubelfabriek,groentenEnFruitmarkt,café,restaurant);
             }
             for (int i = 0; i < 3; i++)
 			{
                 WisselKaartKiezen bedrijfsComplex = new WisselKaartKiezen();
                 NeemMuntIedereen stadion = new NeemMuntIedereen();
                 NeemMuntKiezen tvStation = new NeemMuntKiezen();
-                List.add(bedrijfsComplex, stadion, tvStation);
+                KaartenPot.add(bedrijfsComplex, stadion, tvStation);
 			}
         }
         public void WisselKaarten(Kaart _kaart1, Kaart _kaart2)
