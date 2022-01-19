@@ -8,6 +8,11 @@ namespace Machi_Koro_Casusopdracht
 {
     class Bezienswaardigheid : Kaart
     {
-        public bool IsActief { get; set; }
+        public override bool IsActief { get; set; }
+        public override int BetrokkenMunten { get; set; }
+        public override void DoeEffect(Spel _spel)
+        {
+            return;
+        }
     }
 }

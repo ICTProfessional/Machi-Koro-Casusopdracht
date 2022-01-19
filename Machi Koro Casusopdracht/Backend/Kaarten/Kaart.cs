@@ -14,6 +14,7 @@ namespace Machi_Koro_Casusopdracht
         /* afbeelding moet nog als file variabele*/
         public int Icoon { get; set; }
         abstract public int BetrokkenMunten { get; set; }
+        abstract public bool IsActief { get; set; }
 
         abstract public void DoeEffect(Spel _spel);
     }
