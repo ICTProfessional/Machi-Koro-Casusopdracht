@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backend\AI.cs" />
+    <Compile Include="Backend\Iconen.cs" />
     <Compile Include="Backend\Instellingen.cs" />
     <Compile Include="Backend\Kaarten\Bezienswaardigheid.cs" />
     <Compile Include="Backend\Kaarten\Gebouw.cs" />
