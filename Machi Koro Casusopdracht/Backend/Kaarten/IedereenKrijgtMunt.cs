@@ -8,6 +8,6 @@ namespace Machi_Koro_Casusopdracht
 {
     class IedereenKrijgtMunt : Gebouw
     {
-
+        
     }
 }

@@ -48,14 +48,14 @@ namespace Machi_Koro_Casusopdracht
                 NeemMuntSpeler café = new NeemMuntSpeler();
                 NeemMuntSpeler restaurant = new NeemMuntSpeler();
 
-                KaartenPot.add(graanveld,appelboomgaard,veehouderij,mijn,bos,bakkerij,supermarkt,Kaasfabriek,meubelfabriek,groentenEnFruitmarkt,café,restaurant);
+                KaartenPot.Add(graanveld,appelboomgaard,veehouderij,mijn,bos,bakkerij,supermarkt,Kaasfabriek,meubelfabriek,groentenEnFruitmarkt,café,restaurant);
             }
             for (int i = 0; i < 3; i++)
 			{
                 WisselKaartKiezen bedrijfsComplex = new WisselKaartKiezen();
                 NeemMuntIedereen stadion = new NeemMuntIedereen();
                 NeemMuntKiezen tvStation = new NeemMuntKiezen();
-                KaartenPot.add(bedrijfsComplex, stadion, tvStation);
+                KaartenPot.Add(bedrijfsComplex, stadion, tvStation);
 			}
         }
         public void WisselKaarten(Kaart _kaart1, Kaart _kaart2)
@@ -81,6 +81,7 @@ namespace Machi_Koro_Casusopdracht
                     }
                 }
             }
+            return null;
         }
         /// Haalt kaarten van spelers die een effect doen
         public List<Kaart> GetActieveKaartenVanSpeler(Speler _speler)
@@ -102,16 +103,19 @@ namespace Machi_Koro_Casusopdracht
                         {
                             actieveKaarten.Remove(_kaart);
                         }
+                        break;
                     case "WisselKaartKiezen":
                         if(_speler != GetHuidigeSpeler())
                         {
                             actieveKaarten.Remove(_kaart);
                         }
+                        break;
                     case "NeemMuntIedereen":
                         if(_speler != GetHuidigeSpeler())
                         {
                             actieveKaarten.Remove(_kaart);
                         }
+                        break;
                     case "NeemMuntKiezen":
                         if(_speler != GetHuidigeSpeler())
                         {
@@ -145,8 +149,14 @@ namespace Machi_Koro_Casusopdracht
             {
                 int a = _gekozenSpeler.Geld;
                 _gekozenSpeler.Geld = 0;
-                _eigenaarKaart += a;
+                _eigenaarKaart.Geld += a;
             }
+        }
+
+        public void KaartKopen(Kaart _kaart)
+        {
+            GetHuidigeSpeler().Gebouwen.Add(_kaart);
+            KaartenPot.Remove(_kaart);
         }
     }
 }
