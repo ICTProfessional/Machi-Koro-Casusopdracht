@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
-    class Speler
+    public class Speler
     {
         public string Naam { get; set; }
         public int Geld { get; set; }
@@ -29,9 +29,15 @@ namespace Machi_Koro_Casusopdracht
         public void ResetStats()
         {
             Geld = 3;
-            /*Bezienswaardigheden.Clear();*/
+            foreach (Bezienswaardigheid bezienswaardigheidskaart in Bezienswaardigheden)
+            {
+                bezienswaardigheidskaart.IsActief = false;
+            }
             Gebouwen.Clear();
-            Gebouwen.Add("Graanveld");
+            IedereenKrijgtMunt graanVeld = new IedereenKrijgtMunt("Graanveld", 1, Iconen.Graan, new List<int> { 1 }, 1);
+            RollerKrijgtMunt bakkerij = new RollerKrijgtMunt("Bakkerij", 1, Iconen.Winkel, new List<int> { 2, 3 }, 1);
+            Gebouwen.Add(graanVeld);
+            Gebouwen.Add(bakkerij);
         }
         /// <summary>
         /// Checkt of een speler een winkelcentrum heeft
@@ -39,7 +45,7 @@ namespace Machi_Koro_Casusopdracht
         public bool HeeftWinkelCentrum()
         {
             
-            foreach (var bezienswaardigheidkaart in Bezienswaardigheden)
+            foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
                 if (bezienswaardigheidkaart.Naam.ToLower() == "winkelcentrum")
                 {
@@ -53,7 +59,7 @@ namespace Machi_Koro_Casusopdracht
         /// </summary>
         public bool HeeftStation()
         {
-            foreach (var bezienswaardigheidkaart in Bezienswaardigheden)
+            foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
                 if (bezienswaardigheidkaart.Naam.ToLower() == "station")
                 {
@@ -68,7 +74,7 @@ namespace Machi_Koro_Casusopdracht
         /// </summary>
         public bool HeeftPretpark()
         {
-            foreach (var bezienswaardigheidkaart in Bezienswaardigheden)
+            foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
                 if (bezienswaardigheidkaart.Naam.ToLower() == "pretpark")
                 {
@@ -83,7 +89,7 @@ namespace Machi_Koro_Casusopdracht
         /// </summary>
         public bool HeeftRadioToren()
         {
-            foreach (var bezienswaardigheidkaart in Bezienswaardigheden)
+            foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
                 if (bezienswaardigheidkaart.Naam.ToLower() == "radiotoren")
                 {
@@ -93,7 +99,13 @@ namespace Machi_Koro_Casusopdracht
             return false;
         }
 
+        public virtual void CalculeerKaartenKopen(List<Kaart> _kaartenPot)
+        {
 
+        }
+
+        public abstract void CalculeerSpelerKiezen(List<Speler> _spelers);
+        
 
     }
 }

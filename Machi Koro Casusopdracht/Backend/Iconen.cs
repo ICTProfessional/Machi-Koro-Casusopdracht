@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
-    internal enum Iconen
+    public enum Iconen
     {
         Graan,
         Koe,

@@ -8,6 +8,10 @@ namespace Machi_Koro_Casusopdracht
 {
     class RollerKrijgtMunt : Gebouw 
     {
+        public RollerKrijgtMunt(string _naam, int _prijs, Iconen _icoon, List<int> _rolwaarden, int _betrokkenMunten) : base(_naam, _prijs, _icoon, _rolwaarden, _betrokkenMunten)
+        {
+
+        }
         // Geeft een aantal munten aan de speler als hij aan de beurt is
         public int ?BetrokkenIcoon { get; set; }
 
