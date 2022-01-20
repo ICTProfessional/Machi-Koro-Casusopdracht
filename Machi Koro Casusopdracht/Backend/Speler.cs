@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
-    class Speler
+    public class Speler
     {
         public string Naam { get; set; }
         public int Geld { get; set; }
@@ -29,9 +29,14 @@ namespace Machi_Koro_Casusopdracht
         public void ResetStats()
         {
             Geld = 3;
-            /*Bezienswaardigheden.Clear();*/
+            /* for each statement voor isactief op false te zetten oor elke bezienswaardighid
+            Bezienswaardigheden.IsActief = false;*/
+            foreach (var bezienswaardigheidskaart in Bezienswaardigheden)
+            {
+                bezienswaardigheidskaart.IsActief = false;
+            }
             Gebouwen.Clear();
-            Gebouwen.Add("Graanveld");
+            Gebouwen.Add(Kaart.Graanveld);
         }
         /// <summary>
         /// Checkt of een speler een winkelcentrum heeft
@@ -93,7 +98,13 @@ namespace Machi_Koro_Casusopdracht
             return false;
         }
 
+        public virtual void CalculeerKaartenKopen(List<Kaart> _kaartenPot)
+        {
 
+        }
+
+        public abstract void CalculeerSpelerKiezen(List<Speler> _spelers);
+        
 
     }
 }
