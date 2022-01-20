@@ -8,6 +8,12 @@ namespace Machi_Koro_Casusopdracht
 {
     class IedereenKrijgtMunt : Gebouw
     {
+        public override void DoeEffect(Spel _spel)
+        {
+            
+           _spel.GetEigenaarKaart(this).Geld += BetrokkenMunten;
+
+        }
 
     }
 }
