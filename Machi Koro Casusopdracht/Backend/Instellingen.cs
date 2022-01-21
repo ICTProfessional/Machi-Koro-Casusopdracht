@@ -25,8 +25,7 @@ namespace Machi_Koro_Casusopdracht
         public void VoegSelerToe(string _naam)
         {
             {
-                Speler speler = new Speler();
-                speler.Naam = _naam;
+                Speler speler = new Speler(_naam);
                 BeschikbareSpelers.Add(speler);
             }
         }

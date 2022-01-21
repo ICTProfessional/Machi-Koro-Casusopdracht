@@ -16,6 +16,6 @@ namespace Machi_Koro_Casusopdracht
         public List<int> Rolwaarden { get; set; }
         public int BetrokkenMunten { get; set; }
 
-        public override abstract void DoeEffect(Spel _spel);
+        public abstract void DoeEffect(Spel _spel);
     }
 }

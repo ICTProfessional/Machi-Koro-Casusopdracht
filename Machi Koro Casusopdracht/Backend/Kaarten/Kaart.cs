@@ -17,7 +17,5 @@ namespace Machi_Koro_Casusopdracht
         public int Prijs { get; set; }
         public string Naam { get; set; }
         public Iconen Icoon { get; set; }
-
-        abstract public void DoeEffect(Spel _spel);
     }
 }

@@ -13,10 +13,5 @@ namespace Machi_Koro_Casusopdracht
 
         }
         public bool IsActief { get; set; }
-        
-        public override void DoeEffect(Spel _spel)
-        {
-            return;
-        }
     }
 }
