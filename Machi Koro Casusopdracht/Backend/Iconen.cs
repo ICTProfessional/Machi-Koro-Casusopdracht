@@ -8,11 +8,11 @@ namespace Machi_Koro_Casusopdracht
 {
     public enum Iconen
     {
-        Graan,
-        Koe,
-        Mok,
-        Winkel,
-        Bezienswaardigheid,
-        Tandwiel
+        Worst,
+        Gaiazoo,
+        Noot,
+        Vis,
+        Leeuw,
+        Fles
     }
 }
