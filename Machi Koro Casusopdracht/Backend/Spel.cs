@@ -34,26 +34,26 @@ namespace Machi_Koro_Casusopdracht
             for (int i = 0; i < 6; i++)
             {
                 //Naam, Prijs, Icoon,Rolwaarden, betrokken munten
-                KaartenPot.Add(new IedereenKrijgtMunt("Graanveld", 1, Iconen.Graan, new List<int> { 1 }, 1));
-                KaartenPot.Add(new IedereenKrijgtMunt("Appelboomgaard", ));
-                KaartenPot.Add(new IedereenKrijgtMunt("Veehouderij", 1, Iconen.Koe, new List<int> { 1 }, 1));
-                KaartenPot.Add(new IedereenKrijgtMunt("Mijn"));
-                KaartenPot.Add(new IedereenKrijgtMunt("Bos"));
+                KaartenPot.Add(new IedereenKrijgtMunt("Frituur", 1, Iconen.Worst, new List<int> { 1 }, 1));
+                KaartenPot.Add(new IedereenKrijgtMunt("Broodje Bufkes", 3, Iconen.Worst, new List<int> { 10 }, 3));
+                KaartenPot.Add(new IedereenKrijgtMunt("GaiaZoo Speeltuin", 1, Iconen.Gaiazoo, new List<int> { 2 }, 1));
+                KaartenPot.Add(new IedereenKrijgtMunt("Brand Bierbrouwerij", 6, Iconen.Fles, new List<int> { 9 }, 5));
+                KaartenPot.Add(new IedereenKrijgtMunt("Parkstad Theater", 3, Iconen.Fles, new List<int> { 5 }, 1));
 
-                KaartenPot.Add(new RollerKrijgtMunt("Bakkerij", 1, Iconen.Winkel, new List<int> { 2, 3 }, 1));
-                KaartenPot.Add(new RollerKrijgtMunt("Supermarkt", 2, Iconen.Winkel, new List<int> { 4 }, 3));
-                KaartenPot.Add(new RollerKrijgtMunt("Kaasfabriek", 5, Iconen.Fabriek, new List<int> { 7 }, 0)); //NOG AANPASSEN
-                KaartenPot.Add(new RollerKrijgtMunt("Meubelfabriek", 3, Iconen.Fabriek, new List<int> { 8 }, 0)); // NOG AANPASSEN
-                KaartenPot.Add(new RollerKrijgtMunt("Groenten en Fruitmarkt", 2, Iconen./*NOG AANPASSEN*/, new List<int> { 11, 12 }, 0)); //NOG AANPASSEN
+                KaartenPot.Add(new RollerKrijgtMunt("Mosaqua", 1, Iconen.Vis, new List<int> { 2, 3 }, 1, null));
+                KaartenPot.Add(new RollerKrijgtMunt("D'r Pool", 2, Iconen.Vis, new List<int> { 4 }, 3, null));
+                KaartenPot.Add(new RollerKrijgtMunt("Hof van Gaia", 5, Iconen.Anders, new List<int> { 7 }, 3, Iconen.Gaiazoo));
+                KaartenPot.Add(new RollerKrijgtMunt("Event Design Parkstad", 3, Iconen.Anders, new List<int> { 8 }, 3, Iconen.Fles));
+                KaartenPot.Add(new RollerKrijgtMunt("Stadscentrum", 2, Iconen.Anders, new List<int> { 11, 12 }, 2, Iconen.Worst));
 
-                KaartenPot.Add(new NeemMuntSpeler("Café", 2, Iconen.Mok, new List<int> { 3 }, 1));
-                KaartenPot.Add(new NeemMuntSpeler("Restaurant", 3, Iconen.Mok, new List<int> { 9, 10 }, 2));
+                KaartenPot.Add(new NeemMuntSpeler("UMC Festival", 2, Iconen.Noot, new List<int> { 3 }, 1));
+                KaartenPot.Add(new NeemMuntSpeler("Pinkpop Podium", 3, Iconen.Noot, new List<int> { 9, 10 }, 2));
             }
             for (int i = 0; i < 3; i++)
             {
-                KaartenPot.Add(new WisselKaartKiezen("Bedrijfs Complex", 8, Iconen./*NOG AANPASSEN*/, new List<int> { 6 }, 0));
-                KaartenPot.Add(new NeemMuntIedereen("Stadion", 6, Iconen./*NOG AANPASSEN*/, new List<int> { 6 }, 2));
-                KaartenPot.Add(new NeemMuntKiezen("TV Station", 7, Iconen./*NOG AANPASSEN*/, new List<int> { 6 }, 5));
+                KaartenPot.Add(new WisselKaartKiezen("D'r Joep standbeeld", 8, Iconen.Leeuw, new List<int> { 6 }, 0));
+                KaartenPot.Add(new NeemMuntIedereen("L1 TV Station", 6, Iconen.Leeuw, new List<int> { 6 }, 2));
+                KaartenPot.Add(new NeemMuntKiezen("Omroep Landgraaf", 7, Iconen.Leeuw, new List<int> { 6 }, 5));
             }
         }
         public void WisselKaarten(Kaart _kaart1, Kaart _kaart2)

@@ -13,6 +13,7 @@ namespace Machi_Koro_Casusopdracht
         Noot,
         Vis,
         Leeuw,
-        Fles
+        Fles,
+        Anders
     }
 }
