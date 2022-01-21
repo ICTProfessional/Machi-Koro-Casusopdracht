@@ -13,7 +13,7 @@ namespace Machi_Koro_Casusopdracht
             Naam = _naam;
         }
 
-        internal override Kaart CalculeerKaartKopen(List<Kaart> _kaartenPot)
+        internal Kaart CalculeerKaartKopen(List<Kaart> _kaartenPot)
         {
             Random random = new Random();
             int randNumber = random.Next(0, _kaartenPot.Count - 1);

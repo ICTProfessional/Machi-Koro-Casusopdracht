@@ -34,10 +34,8 @@ namespace Machi_Koro_Casusopdracht
                 bezienswaardigheidskaart.IsActief = false;
             }
             Gebouwen.Clear();
-            IedereenKrijgtMunt graanVeld = new IedereenKrijgtMunt("Graanveld", 1, Iconen.Graan, new List<int> { 1 }, 1);
-            RollerKrijgtMunt bakkerij = new RollerKrijgtMunt("Bakkerij", 1, Iconen.Winkel, new List<int> { 2, 3 }, 1);
-            Gebouwen.Add(graanVeld);
-            Gebouwen.Add(bakkerij);
+            Gebouwen.Add(new IedereenKrijgtMunt("Frituur", 1, Iconen.Worst, new List<int> { 1 }, 1));
+            Gebouwen.Add(new RollerKrijgtMunt("Mosaqua", 1, Iconen.Vis, new List<int> { 2, 3 }, 1, null));
         }
         /// <summary>
         /// Checkt of een speler een winkelcentrum heeft
@@ -98,14 +96,5 @@ namespace Machi_Koro_Casusopdracht
             }
             return false;
         }
-
-        public virtual void CalculeerKaartenKopen(List<Kaart> _kaartenPot)
-        {
-
-        }
-
-        public abstract void CalculeerSpelerKiezen(List<Speler> _spelers);
-        
-
     }
 }

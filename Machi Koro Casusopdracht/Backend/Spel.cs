@@ -129,14 +129,10 @@ namespace Machi_Koro_Casusopdracht
             {
                 if (_kaart.Equals(typeof(Gebouw))) {
                     Gebouw gb = (Gebouw)_kaart;
-                    if (!gb.Rolwaarden.Contains(RolSysteem.GetDobbelWaarde()))
+                    if (!gb.Rolwaarden.Contains(RolSysteemObject.GetDobbelWaarde()))
                     {
                         actieveKaarten.Remove(_kaart);
                     }
-                }
-                if (!_kaart.Rolwaarden.Contains(RolSysteem.GetDobbelWaarde()))
-                {
-                    actieveKaarten.Remove(_kaart);
                 }
             }
             return actieveKaarten;
