@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
-    abstract class Kaart
+    abstract public class Kaart
     {
+        public Kaart(string _naam, int _prijs, Iconen _icoon)
+        {
+            Naam = _naam;
+            Prijs = _prijs;
+            Icoon = _icoon;
+        }
         public int Prijs { get; set; }
         public string Naam { get; set; }
-        public string Beschrijving { get; set; }
-        /* afbeelding moet nog als file variabele*/
-        public int Icoon { get; set; }
-        abstract public int BetrokkenMunten { get; set; }
+        public Iconen Icoon { get; set; }
 
         abstract public void DoeEffect(Spel _spel);
     }

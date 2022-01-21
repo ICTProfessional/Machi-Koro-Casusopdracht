@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Machi_Koro_Casusopdracht
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
