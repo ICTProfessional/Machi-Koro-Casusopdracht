@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
-    class Spel
+    public class Spel
     {
         public List<Speler> Spelers { get; set; }
         public int HuidigeSpelerIndex { get; set; } = 0;

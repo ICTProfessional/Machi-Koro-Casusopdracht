@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
-    class RolSysteem
+    public class RolSysteem
     {
         public int DobbelsteenWaarde1 { get; set; }
         public int DobbelsteenWaarde2 { get; set; }
