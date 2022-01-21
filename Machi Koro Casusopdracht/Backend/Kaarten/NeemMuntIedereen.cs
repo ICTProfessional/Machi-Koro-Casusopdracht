@@ -8,6 +8,11 @@ namespace Machi_Koro_Casusopdracht
 {
     class NeemMuntIedereen : Gebouw
     {
+        public NeemMuntIedereen(string _naam, int _prijs, Iconen _icoon, List<int> _rolwaarden, int _betrokkenMunten) : base(_naam, _prijs, _icoon)
+        {
+
+        }
+
         // Neemt een aantal munten van alle spelers behalve degene die deze kaart bezit
         public override void DoeEffect(Spel _spel)
         {
