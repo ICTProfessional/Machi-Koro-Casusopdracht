@@ -12,12 +12,11 @@ namespace Machi_Koro_Casusopdracht
         {
 
         }
-
-        public override bool IsActief { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public override void DoeEffect(Spel _spel)
         {
-            throw new NotImplementedException();
+            
+           _spel.GetEigenaarKaart(this).Geld += BetrokkenMunten;
+
         }
     }
 }
