@@ -40,9 +40,9 @@
             this.img_Bezienswaardigheid4 = new System.Windows.Forms.PictureBox();
             this.textbox_Events = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.img_Frituur = new System.Windows.Forms.PictureBox();
+            this.img_GaiaSpeeltuin = new System.Windows.Forms.PictureBox();
+            this.img_ParkstadTheater = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -58,11 +58,11 @@
             this.btn_Opties = new System.Windows.Forms.Button();
             this.btn_Spelers = new System.Windows.Forms.Button();
             this.lbl_FrituurAantal = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_GaiaSpeeltuinAantal = new System.Windows.Forms.Label();
+            this.lbl_ParkstadTheaterAantal = new System.Windows.Forms.Label();
+            this.lbl_BrandAantal = new System.Windows.Forms.Label();
+            this.lbl_BufkesAantal = new System.Windows.Forms.Label();
+            this.lbl_MosaquaAantal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -76,9 +76,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Frituur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_GaiaSpeeltuin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_ParkstadTheater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -187,29 +187,29 @@
             this.toolTip1.AutomaticDelay = 100;
             this.toolTip1.IsBalloon = true;
             // 
-            // pictureBox1
+            // img_Frituur
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(355, 215);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 90);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.img_Frituur.Location = new System.Drawing.Point(355, 215);
+            this.img_Frituur.Name = "img_Frituur";
+            this.img_Frituur.Size = new System.Drawing.Size(70, 90);
+            this.img_Frituur.TabIndex = 10;
+            this.img_Frituur.TabStop = false;
             // 
-            // pictureBox2
+            // img_GaiaSpeeltuin
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(431, 215);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 90);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.img_GaiaSpeeltuin.Location = new System.Drawing.Point(431, 215);
+            this.img_GaiaSpeeltuin.Name = "img_GaiaSpeeltuin";
+            this.img_GaiaSpeeltuin.Size = new System.Drawing.Size(70, 90);
+            this.img_GaiaSpeeltuin.TabIndex = 11;
+            this.img_GaiaSpeeltuin.TabStop = false;
             // 
-            // pictureBox3
+            // img_ParkstadTheater
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(507, 215);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(70, 90);
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
+            this.img_ParkstadTheater.Location = new System.Drawing.Point(507, 215);
+            this.img_ParkstadTheater.Name = "img_ParkstadTheater";
+            this.img_ParkstadTheater.Size = new System.Drawing.Size(70, 90);
+            this.img_ParkstadTheater.TabIndex = 12;
+            this.img_ParkstadTheater.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -328,61 +328,61 @@
             // lbl_FrituurAantal
             // 
             this.lbl_FrituurAantal.AutoSize = true;
-            this.lbl_FrituurAantal.Location = new System.Drawing.Point(385, 314);
+            this.lbl_FrituurAantal.Location = new System.Drawing.Point(385, 308);
             this.lbl_FrituurAantal.Name = "lbl_FrituurAantal";
             this.lbl_FrituurAantal.Size = new System.Drawing.Size(20, 16);
             this.lbl_FrituurAantal.TabIndex = 27;
             this.lbl_FrituurAantal.Text = "0x";
             // 
-            // label2
+            // lbl_GaiaSpeeltuinAantal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(459, 314);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 16);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "0x";
+            this.lbl_GaiaSpeeltuinAantal.AutoSize = true;
+            this.lbl_GaiaSpeeltuinAantal.Location = new System.Drawing.Point(459, 308);
+            this.lbl_GaiaSpeeltuinAantal.Name = "lbl_GaiaSpeeltuinAantal";
+            this.lbl_GaiaSpeeltuinAantal.Size = new System.Drawing.Size(20, 16);
+            this.lbl_GaiaSpeeltuinAantal.TabIndex = 28;
+            this.lbl_GaiaSpeeltuinAantal.Text = "0x";
             // 
-            // label3
+            // lbl_ParkstadTheaterAantal
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(528, 314);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 16);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "0x";
+            this.lbl_ParkstadTheaterAantal.AutoSize = true;
+            this.lbl_ParkstadTheaterAantal.Location = new System.Drawing.Point(528, 308);
+            this.lbl_ParkstadTheaterAantal.Name = "lbl_ParkstadTheaterAantal";
+            this.lbl_ParkstadTheaterAantal.Size = new System.Drawing.Size(20, 16);
+            this.lbl_ParkstadTheaterAantal.TabIndex = 29;
+            this.lbl_ParkstadTheaterAantal.Text = "0x";
             // 
-            // label4
+            // lbl_BrandAantal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(611, 314);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 16);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "0x";
+            this.lbl_BrandAantal.AutoSize = true;
+            this.lbl_BrandAantal.Location = new System.Drawing.Point(611, 308);
+            this.lbl_BrandAantal.Name = "lbl_BrandAantal";
+            this.lbl_BrandAantal.Size = new System.Drawing.Size(20, 16);
+            this.lbl_BrandAantal.TabIndex = 30;
+            this.lbl_BrandAantal.Text = "0x";
             // 
-            // label5
+            // lbl_BufkesAantal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(687, 314);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 16);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "0x";
+            this.lbl_BufkesAantal.AutoSize = true;
+            this.lbl_BufkesAantal.Location = new System.Drawing.Point(687, 308);
+            this.lbl_BufkesAantal.Name = "lbl_BufkesAantal";
+            this.lbl_BufkesAantal.Size = new System.Drawing.Size(20, 16);
+            this.lbl_BufkesAantal.TabIndex = 31;
+            this.lbl_BufkesAantal.Text = "0x";
             // 
-            // label6
+            // lbl_MosaquaAantal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(385, 437);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 16);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "0x";
+            this.lbl_MosaquaAantal.AutoSize = true;
+            this.lbl_MosaquaAantal.Location = new System.Drawing.Point(385, 426);
+            this.lbl_MosaquaAantal.Name = "lbl_MosaquaAantal";
+            this.lbl_MosaquaAantal.Size = new System.Drawing.Size(20, 16);
+            this.lbl_MosaquaAantal.TabIndex = 32;
+            this.lbl_MosaquaAantal.Text = "0x";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(459, 437);
+            this.label7.Location = new System.Drawing.Point(459, 426);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 16);
             this.label7.TabIndex = 33;
@@ -391,7 +391,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(528, 437);
+            this.label8.Location = new System.Drawing.Point(528, 426);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 16);
             this.label8.TabIndex = 34;
@@ -400,7 +400,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(611, 437);
+            this.label9.Location = new System.Drawing.Point(611, 426);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(20, 16);
             this.label9.TabIndex = 35;
@@ -409,7 +409,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(687, 437);
+            this.label10.Location = new System.Drawing.Point(687, 426);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 16);
             this.label10.TabIndex = 36;
@@ -474,11 +474,11 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_MosaquaAantal);
+            this.Controls.Add(this.lbl_BufkesAantal);
+            this.Controls.Add(this.lbl_BrandAantal);
+            this.Controls.Add(this.lbl_ParkstadTheaterAantal);
+            this.Controls.Add(this.lbl_GaiaSpeeltuinAantal);
             this.Controls.Add(this.lbl_FrituurAantal);
             this.Controls.Add(this.btn_Spelers);
             this.Controls.Add(this.btn_Opties);
@@ -494,9 +494,9 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.img_ParkstadTheater);
+            this.Controls.Add(this.img_GaiaSpeeltuin);
+            this.Controls.Add(this.img_Frituur);
             this.Controls.Add(this.textbox_Events);
             this.Controls.Add(this.img_Bezienswaardigheid4);
             this.Controls.Add(this.img_Bezienswaardigheid3);
@@ -514,9 +514,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Frituur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_GaiaSpeeltuin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_ParkstadTheater)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -547,9 +547,9 @@
         private System.Windows.Forms.PictureBox img_Bezienswaardigheid4;
         private System.Windows.Forms.RichTextBox textbox_Events;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox img_Frituur;
+        private System.Windows.Forms.PictureBox img_GaiaSpeeltuin;
+        private System.Windows.Forms.PictureBox img_ParkstadTheater;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -565,11 +565,11 @@
         private System.Windows.Forms.Button btn_Opties;
         private System.Windows.Forms.Button btn_Spelers;
         private System.Windows.Forms.Label lbl_FrituurAantal;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_GaiaSpeeltuinAantal;
+        private System.Windows.Forms.Label lbl_ParkstadTheaterAantal;
+        private System.Windows.Forms.Label lbl_BrandAantal;
+        private System.Windows.Forms.Label lbl_BufkesAantal;
+        private System.Windows.Forms.Label lbl_MosaquaAantal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
