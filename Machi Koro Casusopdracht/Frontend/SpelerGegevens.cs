@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Machi_Koro_Casusopdracht
 {
-    public partial class ToernooiScherm : Form
+    public partial class SpelerGegevens : Form
     {
-        public ToernooiScherm()
+        public SpelerGegevens()
         {
             InitializeComponent();
         }

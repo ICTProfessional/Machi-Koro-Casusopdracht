@@ -1,4 +1,4 @@
-﻿namespace Machi_Koro_Casusopdracht.Frontend
+﻿namespace Machi_Koro_Casusopdracht
 {
     partial class ToernooiScherm
     {

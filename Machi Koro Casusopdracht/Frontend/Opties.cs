@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Machi_Koro_Casusopdracht
 {
-    public partial class ToernooiScherm : Form
+    public partial class Opties : Form
     {
-        public ToernooiScherm()
+        public Opties()
         {
             InitializeComponent();
         }

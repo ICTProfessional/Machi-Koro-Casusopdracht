@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Machi_Koro_Casusopdracht
+namespace Machi_Koro_Casusopdracht.Frontend
 {
-    public partial class ToernooiScherm : Form
+    public partial class EindeSpel : Form
     {
-        public ToernooiScherm()
+        public EindeSpel()
         {
             InitializeComponent();
         }

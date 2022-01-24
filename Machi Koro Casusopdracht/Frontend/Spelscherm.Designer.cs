@@ -33,12 +33,12 @@
             this.btn_Kopen = new System.Windows.Forms.Button();
             this.btn_Beurteinde = new System.Windows.Forms.Button();
             this.lbl_Beurt = new System.Windows.Forms.Label();
-            this.lbl_Munten = new System.Windows.Forms.Label();
+            this.lbl_Tickets = new System.Windows.Forms.Label();
             this.img_Bezienswaardigheid1 = new System.Windows.Forms.PictureBox();
             this.img_Bezienswaardigheid2 = new System.Windows.Forms.PictureBox();
             this.img_Bezienswaardigheid3 = new System.Windows.Forms.PictureBox();
             this.img_Bezienswaardigheid4 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textbox_Events = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -55,8 +55,8 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Opties = new System.Windows.Forms.Button();
+            this.btn_Spelers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Bezienswaardigheid3)).BeginInit();
@@ -108,21 +108,21 @@
             // lbl_Beurt
             // 
             this.lbl_Beurt.AutoSize = true;
-            this.lbl_Beurt.Location = new System.Drawing.Point(526, 28);
+            this.lbl_Beurt.Location = new System.Drawing.Point(501, 31);
             this.lbl_Beurt.Name = "lbl_Beurt";
-            this.lbl_Beurt.Size = new System.Drawing.Size(138, 16);
+            this.lbl_Beurt.Size = new System.Drawing.Size(152, 16);
             this.lbl_Beurt.TabIndex = 3;
-            this.lbl_Beurt.Text = "Speler is aan de beurt";
+            this.lbl_Beurt.Text = "<Speler> is aan de beurt";
             this.lbl_Beurt.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lbl_Munten
+            // lbl_Tickets
             // 
-            this.lbl_Munten.AutoSize = true;
-            this.lbl_Munten.Location = new System.Drawing.Point(352, 31);
-            this.lbl_Munten.Name = "lbl_Munten";
-            this.lbl_Munten.Size = new System.Drawing.Size(14, 16);
-            this.lbl_Munten.TabIndex = 4;
-            this.lbl_Munten.Text = "4";
+            this.lbl_Tickets.AutoSize = true;
+            this.lbl_Tickets.Location = new System.Drawing.Point(352, 31);
+            this.lbl_Tickets.Name = "lbl_Tickets";
+            this.lbl_Tickets.Size = new System.Drawing.Size(14, 16);
+            this.lbl_Tickets.TabIndex = 4;
+            this.lbl_Tickets.Text = "4";
             // 
             // img_Bezienswaardigheid1
             // 
@@ -156,14 +156,14 @@
             this.img_Bezienswaardigheid4.TabIndex = 8;
             this.img_Bezienswaardigheid4.TabStop = false;
             // 
-            // richTextBox1
+            // textbox_Events
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(24, 28);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(297, 395);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "Golan heeft een 5 gerold!\n\nHij heeft twee mijnen.\nHij krijgt 5 tickets!\n--\nJob he" +
+            this.textbox_Events.Location = new System.Drawing.Point(24, 28);
+            this.textbox_Events.Name = "textbox_Events";
+            this.textbox_Events.ReadOnly = true;
+            this.textbox_Events.Size = new System.Drawing.Size(297, 395);
+            this.textbox_Events.TabIndex = 9;
+            this.textbox_Events.Text = "Golan heeft een 5 gerold!\n\nHij heeft twee mijnen.\nHij krijgt 5 tickets!\n--\nJob he" +
     "eft een 3 gerold.\n\nMilan heeft vier cafés.\nMilan krijgt 4 muntjes van hem.\n\nJob " +
     "slaat Milan in elkaar!";
             // 
@@ -292,31 +292,31 @@
             this.pictureBox15.TabIndex = 20;
             this.pictureBox15.TabStop = false;
             // 
-            // button1
+            // btn_Opties
             // 
-            this.button1.Location = new System.Drawing.Point(795, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Opties";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Opties.Location = new System.Drawing.Point(795, 42);
+            this.btn_Opties.Name = "btn_Opties";
+            this.btn_Opties.Size = new System.Drawing.Size(75, 23);
+            this.btn_Opties.TabIndex = 25;
+            this.btn_Opties.Text = "Opties";
+            this.btn_Opties.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_Spelers
             // 
-            this.button2.Location = new System.Drawing.Point(795, 86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Spelers";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Spelers.Location = new System.Drawing.Point(795, 86);
+            this.btn_Spelers.Name = "btn_Spelers";
+            this.btn_Spelers.Size = new System.Drawing.Size(75, 23);
+            this.btn_Spelers.TabIndex = 26;
+            this.btn_Spelers.Text = "Spelers";
+            this.btn_Spelers.UseVisualStyleBackColor = true;
             // 
             // Spelscherm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 489);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Spelers);
+            this.Controls.Add(this.btn_Opties);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox13);
@@ -332,12 +332,12 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.textbox_Events);
             this.Controls.Add(this.img_Bezienswaardigheid4);
             this.Controls.Add(this.img_Bezienswaardigheid3);
             this.Controls.Add(this.img_Bezienswaardigheid2);
             this.Controls.Add(this.img_Bezienswaardigheid1);
-            this.Controls.Add(this.lbl_Munten);
+            this.Controls.Add(this.lbl_Tickets);
             this.Controls.Add(this.lbl_Beurt);
             this.Controls.Add(this.btn_Beurteinde);
             this.Controls.Add(this.btn_Kopen);
@@ -375,12 +375,12 @@
         private System.Windows.Forms.Button btn_Kopen;
         private System.Windows.Forms.Button btn_Beurteinde;
         private System.Windows.Forms.Label lbl_Beurt;
-        private System.Windows.Forms.Label lbl_Munten;
+        private System.Windows.Forms.Label lbl_Tickets;
         private System.Windows.Forms.PictureBox img_Bezienswaardigheid1;
         private System.Windows.Forms.PictureBox img_Bezienswaardigheid2;
         private System.Windows.Forms.PictureBox img_Bezienswaardigheid3;
         private System.Windows.Forms.PictureBox img_Bezienswaardigheid4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox textbox_Events;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -397,7 +397,7 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Opties;
+        private System.Windows.Forms.Button btn_Spelers;
     }
 }
