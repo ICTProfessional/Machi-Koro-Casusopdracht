@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Machi_Koro_Casusopdracht.Frontend
+namespace Machi_Koro_Casusopdracht
 {
     public partial class Spelscherm : Form
     {

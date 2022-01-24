@@ -1,4 +1,4 @@
-﻿namespace Machi_Koro_Casusopdracht.Frontend
+﻿namespace Machi_Koro_Casusopdracht
 {
     partial class SpelerChecken
     {
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lb_SpelerLijst = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_CheckGegevens = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lb_SpelerLijst
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(58, 74);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(185, 260);
-            this.listBox1.TabIndex = 0;
+            this.lb_SpelerLijst.FormattingEnabled = true;
+            this.lb_SpelerLijst.ItemHeight = 16;
+            this.lb_SpelerLijst.Location = new System.Drawing.Point(58, 74);
+            this.lb_SpelerLijst.Name = "lb_SpelerLijst";
+            this.lb_SpelerLijst.Size = new System.Drawing.Size(185, 260);
+            this.lb_SpelerLijst.TabIndex = 0;
             // 
             // label1
             // 
@@ -51,23 +51,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Selecteer speler:";
             // 
-            // button1
+            // btn_CheckGegevens
             // 
-            this.button1.Location = new System.Drawing.Point(76, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Check gegevens";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_CheckGegevens.Location = new System.Drawing.Point(76, 356);
+            this.btn_CheckGegevens.Name = "btn_CheckGegevens";
+            this.btn_CheckGegevens.Size = new System.Drawing.Size(153, 36);
+            this.btn_CheckGegevens.TabIndex = 2;
+            this.btn_CheckGegevens.Text = "Check gegevens";
+            this.btn_CheckGegevens.UseVisualStyleBackColor = true;
             // 
             // SpelerChecken
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(308, 404);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_CheckGegevens);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lb_SpelerLijst);
             this.Name = "SpelerChecken";
             this.Text = "SpelerChecken";
             this.ResumeLayout(false);
@@ -77,8 +77,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lb_SpelerLijst;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_CheckGegevens;
     }
 }
