@@ -44,7 +44,7 @@
             // 
             // btn_OpnieuwSpelen
             // 
-            this.btn_OpnieuwSpelen.Location = new System.Drawing.Point(12, 113);
+            this.btn_OpnieuwSpelen.Location = new System.Drawing.Point(49, 113);
             this.btn_OpnieuwSpelen.Name = "btn_OpnieuwSpelen";
             this.btn_OpnieuwSpelen.Size = new System.Drawing.Size(154, 42);
             this.btn_OpnieuwSpelen.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // btn_StartScherm
             // 
-            this.btn_StartScherm.Location = new System.Drawing.Point(314, 113);
+            this.btn_StartScherm.Location = new System.Drawing.Point(299, 113);
             this.btn_StartScherm.Name = "btn_StartScherm";
             this.btn_StartScherm.Size = new System.Drawing.Size(154, 42);
             this.btn_StartScherm.TabIndex = 2;
