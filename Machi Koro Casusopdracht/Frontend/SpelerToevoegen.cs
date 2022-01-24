@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Machi_Koro_Casusopdracht
 {
-    public partial class Spelscherm : Form
+    public partial class SpelerToevoegen : Form
     {
-        public Spelscherm()
+        public SpelerToevoegen()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Spelscherm_Load(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
