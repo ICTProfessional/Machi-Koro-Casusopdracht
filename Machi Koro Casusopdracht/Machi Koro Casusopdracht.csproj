@@ -67,6 +67,12 @@
     <Compile Include="Frontend\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\SpelerToevoegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\SpelerToevoegen.Designer.cs">
+      <DependentUpon>SpelerToevoegen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\Spelscherm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Backend\Kaarten\WisselKaartKiezen.cs" />
     <EmbeddedResource Include="Frontend\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\SpelerToevoegen.resx">
+      <DependentUpon>SpelerToevoegen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\Spelscherm.resx">
       <DependentUpon>Spelscherm.cs</DependentUpon>
