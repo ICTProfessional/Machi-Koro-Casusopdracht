@@ -172,6 +172,18 @@ namespace Machi_Koro_Casusopdracht
             UpdateKaartenAantal(false);
         }
 
+        private void img_Bezienswaardigheid1_Click(object sender, EventArgs e)
+        {
+            KaartKnopActivatie("Viva la Vida", img_Bezienswaardigheid1);
+        }
+
+        private void img_Bezienswaardigheid2_Click(object sender, EventArgs e)
+        {
+            KaartKnopActivatie("Continium", img_Bezienswaardigheid2);
+        }
+
+
+
         /// <summary>
         /// Voert bepaalde functies uit op basis van de kaartknop die gedrukt is.
         /// </summary>
@@ -224,12 +236,16 @@ namespace Machi_Koro_Casusopdracht
 
         private void img_Bezienswaardigheid3_Click(object sender, EventArgs e)
         {
-
+            KaartKnopActivatie("Drielandenpunt", img_Bezienswaardigheid3);
         }
 
         private void lbl_BrandAantal_Click(object sender, EventArgs e)
         {
 
+        }
+        private void img_Bezienswaardigheid4_Click(object sender, EventArgs e)
+        {
+            KaartKnopActivatie("Roda JC Stadion", img_Bezienswaardigheid4);
         }
 
         private void img_Brand_Click(object sender, EventArgs e)
@@ -298,5 +314,17 @@ namespace Machi_Koro_Casusopdracht
         }
 
         #endregion
+
+        private void btn_Opties_Click(object sender, EventArgs e)
+        {
+            Opties opties = new Opties();
+            opties.ShowDialog(this);
+        }
+
+        private void btn_Spelers_Click(object sender, EventArgs e)
+        {
+            SpelerChecken spelerChecken = new SpelerChecken(HuidigSpel.Spelers);
+            spelerChecken.ShowDialog(this);
+        }
     }
 }

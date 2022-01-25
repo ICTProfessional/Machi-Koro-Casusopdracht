@@ -16,6 +16,11 @@ namespace Machi_Koro_Casusopdracht
         public Speler(string _naam)
         {
             Naam = _naam;
+
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Viva la Vida", 4, Iconen.Leeuw));
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Continium", 10, Iconen.Leeuw));
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Drielandenpunt", 10, Iconen.Leeuw));
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Roda JC Stadion", 22, Iconen.Leeuw));
             ResetStats();
         }
 

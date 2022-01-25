@@ -162,12 +162,33 @@ namespace Machi_Koro_Casusopdracht
                     break;
                 }
             }
+            foreach (Bezienswaardigheid bezienswaardigheid in GetHuidigeSpeler().Bezienswaardigheden)
+            {
+                if (bezienswaardigheid.Naam == _naam)
+                {
+                    geselecteerdeKaart = bezienswaardigheid;
+                    break;
+                }
+            }
             if (geselecteerdeKaart.Prijs > GetHuidigeSpeler().Geld || geselecteerdeKaart == null)
             {
                 return false;
             }
-            GetHuidigeSpeler().Gebouwen.Add(geselecteerdeKaart);
-            KaartenPot.Remove(geselecteerdeKaart);
+
+            if (geselecteerdeKaart is Gebouw)
+            {
+                GetHuidigeSpeler().Gebouwen.Add(geselecteerdeKaart);
+                KaartenPot.Remove(geselecteerdeKaart);
+            }
+            else if (geselecteerdeKaart is Bezienswaardigheid)
+            {
+                Bezienswaardigheid geselecteerdeBezienswaardigheid = (Bezienswaardigheid)geselecteerdeKaart;
+                if (geselecteerdeBezienswaardigheid.IsActief)
+                {
+                    return false;
+                }
+                geselecteerdeBezienswaardigheid.IsActief = true;
+            }
             GetHuidigeSpeler().Geld -= geselecteerdeKaart.Prijs;
             return true;
         }
