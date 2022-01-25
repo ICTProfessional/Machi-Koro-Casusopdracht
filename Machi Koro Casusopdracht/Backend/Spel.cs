@@ -8,11 +8,15 @@ namespace Machi_Koro_Casusopdracht
 {
     public class Spel
     {
-        public List<Speler> Spelers { get; set; }
+        public List<Speler> Spelers { get; set; } = new List<Speler>();
         public int HuidigeSpelerIndex { get; set; } = 0;
-        public List<Kaart> KaartenPot { get; set; }
-        public RolSysteem RolSysteemObject { get; set; }
+        public List<Kaart> KaartenPot { get; set; } = new List<Kaart>();
+        public RolSysteem RolSysteemObject { get; set; } = new RolSysteem();
 
+        public Spel()
+        {
+            VervangKaartenStapel();
+        }
         /// Bepaalt huidige speler
         public Speler GetHuidigeSpeler()
         {
@@ -51,7 +55,7 @@ namespace Machi_Koro_Casusopdracht
             }
             for (int i = 0; i < 3; i++)
             {
-                KaartenPot.Add(new WisselKaartKiezen("D'r Joep standbeeld", 8, Iconen.Leeuw, new List<int> { 6 }, 0));
+                KaartenPot.Add(new WisselKaartKiezen("D'r Joep Standbeeld", 8, Iconen.Leeuw, new List<int> { 6 }, 0));
                 KaartenPot.Add(new NeemMuntIedereen("L1 TV Station", 6, Iconen.Leeuw, new List<int> { 6 }, 2));
                 KaartenPot.Add(new NeemMuntKiezen("Omroep Landgraaf", 7, Iconen.Leeuw, new List<int> { 6 }, 5));
             }
@@ -84,9 +88,8 @@ namespace Machi_Koro_Casusopdracht
         /// Haalt kaarten van spelers die een effect doen
         public List<Kaart> GetActieveKaartenVanSpeler(Speler _speler)
         {
-            List<Kaart> actieveKaarten = _speler.Gebouwen;
-            List<Kaart> kaartClone = actieveKaarten;
-            foreach (Kaart _kaart in kaartClone)
+            List<Kaart> actieveKaarten = _speler.Gebouwen.ToList();
+            foreach (Kaart _kaart in actieveKaarten.ToList())
             {
                 switch (_kaart.GetType().Name)
                 {
@@ -124,15 +127,12 @@ namespace Machi_Koro_Casusopdracht
                         break;
                 }
             }
-            kaartClone = actieveKaarten;
-            foreach (Kaart _kaart in kaartClone)
+            foreach (Kaart _kaart in actieveKaarten.ToList())
             {
-                if (_kaart.Equals(typeof(Gebouw))) {
-                    Gebouw gb = (Gebouw)_kaart;
-                    if (!gb.Rolwaarden.Contains(RolSysteemObject.GetDobbelWaarde()))
-                    {
-                        actieveKaarten.Remove(_kaart);
-                    }
+                Gebouw gb = (Gebouw)_kaart;
+                if (!gb.Rolwaarden.Contains(RolSysteemObject.GetDobbelWaarde()))
+                {
+                   actieveKaarten.Remove(_kaart);
                 }
             }
             return actieveKaarten;
@@ -151,10 +151,25 @@ namespace Machi_Koro_Casusopdracht
                 _eigenaarKaart.Geld += a;
             }
         }
-        public void KaartKopen(Kaart _kaart)
+        public bool KaartKopen(string _naam)
         {
-            GetHuidigeSpeler().Gebouwen.Add(_kaart);
-            KaartenPot.Remove(_kaart);
+            Kaart geselecteerdeKaart = null;
+            foreach (Kaart _kaart in KaartenPot)
+            {
+                if (_kaart.Naam == _naam)
+                {
+                    geselecteerdeKaart = _kaart;
+                    break;
+                }
+            }
+            if (geselecteerdeKaart.Prijs > GetHuidigeSpeler().Geld || geselecteerdeKaart == null)
+            {
+                return false;
+            }
+            GetHuidigeSpeler().Gebouwen.Add(geselecteerdeKaart);
+            KaartenPot.Remove(geselecteerdeKaart);
+            GetHuidigeSpeler().Geld -= geselecteerdeKaart.Prijs;
+            return true;
         }
     }
 }

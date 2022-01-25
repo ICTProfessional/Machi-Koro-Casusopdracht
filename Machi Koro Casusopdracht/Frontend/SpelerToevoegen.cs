@@ -21,5 +21,20 @@ namespace Machi_Koro_Casusopdracht
         {
 
         }
+
+        private void txtbox_NaamSpeler_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string GetSpelerNaam()
+        {
+            return txtbox_NaamSpeler.Text;
+        }
+
+        public bool GetAIKeuze()
+        {
+            return check_IsRobot.Checked;
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
+    // Door: Vinson
     public class RolSysteem
     {
         public int DobbelsteenWaarde1 { get; set; }

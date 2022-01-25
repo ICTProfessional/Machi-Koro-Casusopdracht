@@ -49,6 +49,7 @@
             this.txtbox_NaamSpeler.Name = "txtbox_NaamSpeler";
             this.txtbox_NaamSpeler.Size = new System.Drawing.Size(177, 22);
             this.txtbox_NaamSpeler.TabIndex = 1;
+            this.txtbox_NaamSpeler.TextChanged += new System.EventHandler(this.txtbox_NaamSpeler_TextChanged);
             // 
             // check_IsRobot
             // 
@@ -63,6 +64,7 @@
             // 
             // btn_OkKnop
             // 
+            this.btn_OkKnop.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_OkKnop.Location = new System.Drawing.Point(155, 131);
             this.btn_OkKnop.Name = "btn_OkKnop";
             this.btn_OkKnop.Size = new System.Drawing.Size(112, 31);

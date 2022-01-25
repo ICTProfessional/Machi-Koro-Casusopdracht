@@ -47,6 +47,7 @@
             this.btn_StartSpel.TabIndex = 0;
             this.btn_StartSpel.Text = "Start spel";
             this.btn_StartSpel.UseVisualStyleBackColor = true;
+            this.btn_StartSpel.Click += new System.EventHandler(this.btn_StartSpel_Click);
             // 
             // btn_Toernooi
             // 
@@ -56,6 +57,7 @@
             this.btn_Toernooi.TabIndex = 1;
             this.btn_Toernooi.Text = "Start toernooi";
             this.btn_Toernooi.UseVisualStyleBackColor = true;
+            this.btn_Toernooi.Click += new System.EventHandler(this.btn_Toernooi_Click);
             // 
             // btn_Instellingen
             // 
@@ -103,6 +105,7 @@
             this.btn_SpelerVerwijderen.TabIndex = 6;
             this.btn_SpelerVerwijderen.Text = "Verwijder speler";
             this.btn_SpelerVerwijderen.UseVisualStyleBackColor = true;
+            this.btn_SpelerVerwijderen.Click += new System.EventHandler(this.btn_SpelerVerwijderen_Click);
             // 
             // btn_SpelerToevoegen
             // 
@@ -112,6 +115,7 @@
             this.btn_SpelerToevoegen.TabIndex = 8;
             this.btn_SpelerToevoegen.Text = "Voeg speler toe";
             this.btn_SpelerToevoegen.UseVisualStyleBackColor = true;
+            this.btn_SpelerToevoegen.Click += new System.EventHandler(this.btn_SpelerToevoegen_Click);
             // 
             // label3
             // 

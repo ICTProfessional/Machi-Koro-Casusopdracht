@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
+    // Door: Job
     abstract public class Kaart
     {
         public Kaart(string _naam, int _prijs, Iconen _icoon)
