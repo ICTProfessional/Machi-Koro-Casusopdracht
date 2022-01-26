@@ -17,10 +17,10 @@ namespace Machi_Koro_Casusopdracht
         {
             Naam = _naam;
 
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Viva la Vida", 4, Iconen.Leeuw));
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Continium", 10, Iconen.Leeuw));
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Drielandenpunt", 10, Iconen.Leeuw));
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Roda JC Stadion", 22, Iconen.Leeuw));
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Viva la Vida", 1, Iconen.Leeuw)); // 4
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Continium", 1, Iconen.Leeuw)); // 10
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Drielandenpunt", 1, Iconen.Leeuw)); // 16
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Roda JC Stadion", 1, Iconen.Leeuw)); // 22
             ResetStats();
         }
 
@@ -49,7 +49,7 @@ namespace Machi_Koro_Casusopdracht
             
             foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
-                if (bezienswaardigheidkaart.Naam.ToLower() == "winkelcentrum")
+                if (bezienswaardigheidkaart.Naam.ToLower() == "continium")
                 {
                     return bezienswaardigheidkaart.IsActief;
                 }
@@ -63,7 +63,7 @@ namespace Machi_Koro_Casusopdracht
         {
             foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
-                if (bezienswaardigheidkaart.Naam.ToLower() == "station")
+                if (bezienswaardigheidkaart.Naam.ToLower() == "viva la vida")
                 {
                     return bezienswaardigheidkaart.IsActief;
                 }
@@ -78,7 +78,7 @@ namespace Machi_Koro_Casusopdracht
         {
             foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
-                if (bezienswaardigheidkaart.Naam.ToLower() == "pretpark")
+                if (bezienswaardigheidkaart.Naam.ToLower() == "drielandenpunt")
                 {
                     return bezienswaardigheidkaart.IsActief;
                 }
@@ -93,7 +93,7 @@ namespace Machi_Koro_Casusopdracht
         {
             foreach (Bezienswaardigheid bezienswaardigheidkaart in Bezienswaardigheden)
             {
-                if (bezienswaardigheidkaart.Naam.ToLower() == "radiotoren")
+                if (bezienswaardigheidkaart.Naam.ToLower() == "roda jc stadion")
                 {
                     return bezienswaardigheidkaart.IsActief;
                 }

@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Machi_Koro_Casusopdracht.Frontend
+namespace Machi_Koro_Casusopdracht
 {
     public partial class EindeSpel : Form
     {
-        public EindeSpel()
+        public EindeSpel(string _naamWinnaar)
         {
+            lbl_Winnaar.Text = String.Format("{0} heeft gewonnen!", _naamWinnaar);
             InitializeComponent();
         }
     }

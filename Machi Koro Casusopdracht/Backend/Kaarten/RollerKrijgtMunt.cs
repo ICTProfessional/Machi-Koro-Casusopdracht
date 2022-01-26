@@ -10,7 +10,6 @@ namespace Machi_Koro_Casusopdracht
     {
         public RollerKrijgtMunt(string _naam, int _prijs, Iconen _icoon, List<int> _rolwaarden, int _betrokkenMunten, Iconen ?_betrokkenIcoon) : base(_naam, _prijs, _icoon, _rolwaarden, _betrokkenMunten)
         {
-
             BetrokkenIcoon = _betrokkenIcoon;
         }
         // Geeft een aantal munten aan de speler als hij aan de beurt is
@@ -19,7 +18,7 @@ namespace Machi_Koro_Casusopdracht
         public override void DoeEffect(Spel _spel)
         {
             // Geeft een extra muntje voor het winkelcentrum
-            if (_spel.GetHuidigeSpeler().HeeftWinkelCentrum())
+            if (_spel.GetHuidigeSpeler().HeeftWinkelCentrum() && Icoon == Iconen.Vis)
             {
                 BetrokkenMunten++;
             }

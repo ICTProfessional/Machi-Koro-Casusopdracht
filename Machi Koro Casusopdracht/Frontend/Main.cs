@@ -19,6 +19,14 @@ namespace Machi_Koro_Casusopdracht
             InitializeComponent();
         }
 
+        private void SpelersResetten()
+        {
+            foreach (var speler in instellingen.BeschikbareSpelers)
+            {
+                speler.ResetStats();
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -81,6 +89,7 @@ namespace Machi_Koro_Casusopdracht
                 MessageBox.Show("Er zijn niet genoeg spelers!", "Kan spel niet starten", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            SpelersResetten();
             Spelscherm spelscherm = new Spelscherm(instellingen.BeschikbareSpelers);
             spelscherm.Show();
         }

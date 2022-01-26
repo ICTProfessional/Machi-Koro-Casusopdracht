@@ -15,27 +15,20 @@ namespace Machi_Koro_Casusopdracht
         public void RolWaarden()
         {
             Random random = new Random();
-            DobbelsteenWaarde1 = random.Next(1, 7);
-           
-
-            Random random2 = new Random();
-            DobbelsteenWaarde2 = random2.Next(1, 7);
+            DobbelsteenWaarde1 = random.Next(1, 7);  
+            DobbelsteenWaarde2 = random.Next(1, 7);
            
         }
 
         public bool GetZijnDobbelsteenGelijk()
         {
-            if (DobbelsteenWaarde1 == DobbelsteenWaarde2)
+            if (DobbelsteenWaarde1 == DobbelsteenWaarde2 && TweeStenen)
             {
                 return true;
-
             }
-
             else
             {
                 return false;
-
-
             }
         }
 

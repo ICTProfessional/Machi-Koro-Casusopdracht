@@ -21,6 +21,21 @@ namespace Machi_Koro_Casusopdracht
             BeurtBegin();
         }
 
+        private void Dobbel()
+        {
+            HuidigSpel.RolSysteemObject.RolWaarden();
+            switch (HuidigSpel.RolSysteemObject.TweeStenen)
+            {
+                case true:
+                    VoegEventToe(String.Format("{0} heeft een {1} en een {2} gerold! Totaal: {3}.", HuidigSpel.GetHuidigeSpeler().Naam, HuidigSpel.RolSysteemObject.DobbelsteenWaarde1, HuidigSpel.RolSysteemObject.DobbelsteenWaarde2, HuidigSpel.RolSysteemObject.GetDobbelWaarde().ToString()));
+                    break;
+                case false:
+                    VoegEventToe(String.Format("{0} heeft een {1} gerold!", HuidigSpel.GetHuidigeSpeler().Naam, HuidigSpel.RolSysteemObject.GetDobbelWaarde().ToString()));
+                    break;
+
+            }
+        }
+
         private string GetHuidigeSpelerNaam()
         {
             return HuidigSpel.GetHuidigeSpeler().Naam;
@@ -38,14 +53,39 @@ namespace Machi_Koro_Casusopdracht
 
         private void btn_Beurteinde_Click(object sender, EventArgs e)
         {
-            HuidigSpel.WisselBeurt();
+            if (HuidigSpel.GetHuidigeSpeler().HeeftPretpark() && HuidigSpel.RolSysteemObject.GetZijnDobbelsteenGelijk())
+            {
+                VoegEventToe(String.Format("{0} heeft twee keer hetzelfde gegooid! Je mag opnieuw dobbelen.", GetHuidigeSpelerNaam()));
+            }
+            else
+            {
+                HuidigSpel.WisselBeurt();
+            }
             BeurtBegin();
         }
 
         private void btn_Dobbel_Click(object sender, EventArgs e)
         {
-            HuidigSpel.RolSysteemObject.RolWaarden();
-            VoegEventToe(String.Format("{0} heeft een {1} gerold!", HuidigSpel.GetHuidigeSpeler().Naam, HuidigSpel.RolSysteemObject.GetDobbelWaarde().ToString()));
+            Dobbel();
+            if (HuidigSpel.GetHuidigeSpeler().HeeftRadioToren())
+            {
+                if (MessageBox.Show(String.Format("Je hebt een {0} gerold. Wil je opnieuw rollen?", HuidigSpel.RolSysteemObject.GetDobbelWaarde()), "Roda JC Stadion melding", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (HuidigSpel.GetHuidigeSpeler().HeeftStation())
+                    {
+                        if (MessageBox.Show(String.Format("Je gaat opnieuw rollen. Wil je met twee dobbelstenen rollen?", GetHuidigeSpelerNaam()), "Roda JC Stadion melding", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            HuidigSpel.RolSysteemObject.TweeStenen = true;
+                        }
+                        else
+                        {
+                            HuidigSpel.RolSysteemObject.TweeStenen = false;
+                        }
+                    }
+                    VoegEventToe(String.Format("{0} gooit opnieuw!", GetHuidigeSpelerNaam()));
+                    Dobbel();
+                }
+            }
             ActiveerKaarten();
             btn_Dobbel.Enabled = false;
             btn_Beurteinde.Enabled = true;
@@ -142,6 +182,27 @@ namespace Machi_Koro_Casusopdracht
         {
             lbl_Beurt.Text = String.Format("{0} is aan de beurt!", HuidigSpel.GetHuidigeSpeler().Naam);
             lbl_Tickets.Text = HuidigSpel.GetHuidigeSpeler().Geld.ToString();
+            lbl_GeenBezienswaardigheid1.Visible = true;
+            lbl_GeenBezienswaardigheid2.Visible = true;
+            lbl_GeenBezienswaardigheid3.Visible = true;
+            lbl_GeenBezienswaardigheid4.Visible = true;
+
+            if (HuidigSpel.GetHuidigeSpeler().HeeftStation())
+            {
+                lbl_GeenBezienswaardigheid1.Visible = false;
+            }
+            if (HuidigSpel.GetHuidigeSpeler().HeeftWinkelCentrum())
+            {
+                lbl_GeenBezienswaardigheid2.Visible = false;
+            }
+            if (HuidigSpel.GetHuidigeSpeler().HeeftPretpark())
+            {
+                lbl_GeenBezienswaardigheid3.Visible = false;
+            }
+            if (HuidigSpel.GetHuidigeSpeler().HeeftRadioToren())
+            {
+                lbl_GeenBezienswaardigheid4.Visible = false;
+            }
             UpdateKaartenAantal(true);
         }
 
@@ -206,6 +267,16 @@ namespace Machi_Koro_Casusopdracht
                     btn_Kopen.Enabled = false;
                     lbl_KaartKopen.Visible = false;
                     VoegEventToe(String.Format("{0} heeft een \"{1}\" kaart gekocht!", GetHuidigeSpelerNaam(), _naam));
+                    foreach (var speler in HuidigSpel.Spelers)
+                    {
+                        if (speler.HeeftPretpark() && speler.HeeftStation() && speler.HeeftWinkelCentrum() && speler.HeeftRadioToren())
+                        {
+                            // Speler heeft gewonnen!
+                            EindeSpel eindeSpel = new EindeSpel(speler.Naam);
+                            eindeSpel.ShowDialog();
+                            this.Close();
+                        }
+                    }
                 }
             }
             else
