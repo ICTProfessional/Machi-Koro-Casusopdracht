@@ -23,6 +23,22 @@ namespace Machi_Koro_Casusopdracht
 
         private void UpdateKaartenAantal(bool isSpeler)
         {
+            if (geselecteerdeSpeler.HeeftStation())
+            {
+                lbl_GeenBezienswaardigheid1.Visible = false;
+            }
+            if (geselecteerdeSpeler.HeeftWinkelCentrum())
+            {
+                lbl_GeenBezienswaardigheid2.Visible = false;
+            }
+            if (geselecteerdeSpeler.HeeftPretpark())
+            {
+                lbl_GeenBezienswaardigheid3.Visible = false;
+            }
+            if (geselecteerdeSpeler.HeeftRadioToren())
+            {
+                lbl_GeenBezienswaardigheid4.Visible = false;
+            }
             lbl_FrituurAantal.Text = GetAantalVanKaartInTekst("Frituur", isSpeler);
             lbl_GaiaSpeeltuinAantal.Text = GetAantalVanKaartInTekst("GaiaZoo Speeltuin", isSpeler);
             lbl_ParkstadTheaterAantal.Text = GetAantalVanKaartInTekst("Parkstad Theater", isSpeler);
@@ -66,6 +82,11 @@ namespace Machi_Koro_Casusopdracht
         }
 
         private void KaartChecken_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void img_Bufkes_Click(object sender, EventArgs e)
         {
 
         }

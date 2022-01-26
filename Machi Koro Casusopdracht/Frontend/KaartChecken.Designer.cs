@@ -48,6 +48,8 @@
             this.lbl_ParkstadTheaterAantal = new System.Windows.Forms.Label();
             this.lbl_GaiaSpeeltuinAantal = new System.Windows.Forms.Label();
             this.lbl_FrituurAantal = new System.Windows.Forms.Label();
+            this.lbl_Tickets = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.img_DrJoep = new System.Windows.Forms.PictureBox();
             this.img_OmroepLandgraaf = new System.Windows.Forms.PictureBox();
             this.img_L1TVStation = new System.Windows.Forms.PictureBox();
@@ -67,8 +69,6 @@
             this.img_Bezienswaardigheid3 = new System.Windows.Forms.PictureBox();
             this.img_Bezienswaardigheid2 = new System.Windows.Forms.PictureBox();
             this.img_Bezienswaardigheid1 = new System.Windows.Forms.PictureBox();
-            this.lbl_Tickets = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_DrJoep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_OmroepLandgraaf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_L1TVStation)).BeginInit();
@@ -266,6 +266,26 @@
             this.lbl_FrituurAantal.TabIndex = 68;
             this.lbl_FrituurAantal.Text = "0x";
             // 
+            // lbl_Tickets
+            // 
+            this.lbl_Tickets.AutoSize = true;
+            this.lbl_Tickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tickets.Location = new System.Drawing.Point(100, 114);
+            this.lbl_Tickets.Name = "lbl_Tickets";
+            this.lbl_Tickets.Size = new System.Drawing.Size(19, 20);
+            this.lbl_Tickets.TabIndex = 48;
+            this.lbl_Tickets.Text = "4";
+            // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Location = new System.Drawing.Point(50, 510);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 42);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // img_DrJoep
             // 
             this.img_DrJoep.Image = global::Machi_Koro_Casusopdracht.Properties.Resources.Dr_joep_standbeeld;
@@ -386,6 +406,7 @@
             this.img_Bufkes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.img_Bufkes.TabIndex = 57;
             this.img_Bufkes.TabStop = false;
+            this.img_Bufkes.Click += new System.EventHandler(this.img_Bufkes_Click);
             // 
             // img_Brand
             // 
@@ -476,26 +497,6 @@
             this.img_Bezienswaardigheid1.TabIndex = 49;
             this.img_Bezienswaardigheid1.TabStop = false;
             this.img_Bezienswaardigheid1.Click += new System.EventHandler(this.img_Bezienswaardigheid1_Click);
-            // 
-            // lbl_Tickets
-            // 
-            this.lbl_Tickets.AutoSize = true;
-            this.lbl_Tickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tickets.Location = new System.Drawing.Point(100, 114);
-            this.lbl_Tickets.Name = "lbl_Tickets";
-            this.lbl_Tickets.Size = new System.Drawing.Size(19, 20);
-            this.lbl_Tickets.TabIndex = 48;
-            this.lbl_Tickets.Text = "4";
-            // 
-            // button1
-            // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(50, 510);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // KaartChecken
             // 

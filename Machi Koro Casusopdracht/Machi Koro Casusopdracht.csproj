@@ -73,6 +73,12 @@
     <Compile Include="Frontend\KaartChecken.Designer.cs">
       <DependentUpon>KaartChecken.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\KaartKiezen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\KaartKiezen.Designer.cs">
+      <DependentUpon>KaartKiezen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\KaartKopen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\KaartChecken.resx">
       <DependentUpon>KaartChecken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\KaartKiezen.resx">
+      <DependentUpon>KaartKiezen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\KaartKopen.resx">
       <DependentUpon>KaartKopen.cs</DependentUpon>

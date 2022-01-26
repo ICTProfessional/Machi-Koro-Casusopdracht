@@ -153,6 +153,38 @@ namespace Machi_Koro_Casusopdracht
                             VoegEventToe(String.Format("{0} heeft besloten om geen geld af te pakken!", HuidigSpel.GetEigenaarKaart(_kaart).Naam));
                         }
                     }
+                    else if (_kaart is WisselKaartKiezen)
+                    {
+                        VoegEventToe(String.Format("{0} mag een speler kiezen om een kaart van te pakken!", GetHuidigeSpelerNaam()));
+                        var andereSpelers = HuidigSpel.Spelers.ToList();
+                        andereSpelers.Remove(HuidigSpel.GetHuidigeSpeler());
+                        SpelerChecken spelerChecken = new SpelerChecken(andereSpelers);
+                        if (spelerChecken.ShowDialog() == DialogResult.OK)
+                        {
+                            KaartKiezen kaartKiezen = new KaartKiezen(spelerChecken.GetGeselecteerdeSpeler());
+                            if (kaartKiezen.ShowDialog() == DialogResult.OK)
+                            {
+                                Kaart WisselendeKaart = kaartKiezen.GetGekozenKaart();
+                                var kaartKiezen2 = new KaartKiezen(HuidigSpel.GetHuidigeSpeler());
+                                if (kaartKiezen2.ShowDialog() == DialogResult.OK)
+                                {
+                                    VoegEventToe(String.Format("{0} heeft de kaart {1} van {2} geruilt met een {3}!", HuidigSpel.GetHuidigeSpeler().Naam, WisselendeKaart.Naam, HuidigSpel.GetEigenaarKaart(WisselendeKaart).Naam, kaartKiezen2.GetGekozenKaart().Naam));
+                                    HuidigSpel.WisselKaarten(WisselendeKaart, kaartKiezen2.GetGekozenKaart());
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Je moet een kaart ruilen!", "Waarschuwing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    ActiveerKaarten();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Je moet een kaart ruilen!", "Waarschuwing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                ActiveerKaarten();
+                            }
+                        }
+
+                    }
                     UpdateUI();
                 }
             }
