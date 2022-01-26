@@ -13,7 +13,7 @@ namespace Machi_Koro_Casusopdracht
     public partial class Spelscherm : Form
     {
         public Spel HuidigSpel;
-        public Spelscherm(List<Speler> _meespelers)
+        public Spelscherm(List<Speler> _meespelers, bool _isToernooiSpel)
         {
             InitializeComponent();
             HuidigSpel = new Spel();
@@ -140,6 +140,19 @@ namespace Machi_Koro_Casusopdracht
                     {
                         VoegEventToe(String.Format("{0} krijgt {1} ticket(s) van iedereen!", HuidigSpel.GetEigenaarKaart(_kaart).Naam, _kaart.BetrokkenMunten.ToString()));
                     }
+                    else if (_kaart is NeemMuntKiezen)
+                    {
+                        VoegEventToe(String.Format("{0} mag een speler kiezen om {1} tickets van te pakken!", HuidigSpel.GetEigenaarKaart(_kaart).Naam, _kaart.BetrokkenMunten.ToString()));
+                        SpelerChecken spelerChecken = new SpelerChecken(HuidigSpel.Spelers);
+                        if (spelerChecken.ShowDialog() == DialogResult.OK)
+                        {
+                            HuidigSpel.NeemMuntKiezenEffect(spelerChecken.GetGeselecteerdeSpeler(), HuidigSpel.GetHuidigeSpeler());
+                        }
+                        else
+                        {
+                            VoegEventToe(String.Format("{0} heeft besloten om geen geld af te pakken!", HuidigSpel.GetEigenaarKaart(_kaart).Naam));
+                        }
+                    }
                     UpdateUI();
                 }
             }
@@ -173,7 +186,7 @@ namespace Machi_Koro_Casusopdracht
             lbl_HofVanGaiaAantal.Text = GetAantalVanKaartInTekst("Hof van Gaia", isSpeler);
             lbl_UmcFestivalAantal.Text = GetAantalVanKaartInTekst("UMC Festival", isSpeler);
             lbl_PinkpopPodiumAantal.Text = GetAantalVanKaartInTekst("Pinkpop Podium", isSpeler);
-            lbl_DrJoepAantal.Text = GetAantalVanKaartInTekst("D'r Joep standbeeld", isSpeler);
+            lbl_DrJoepAantal.Text = GetAantalVanKaartInTekst("D'r Joep Standbeeld", isSpeler);
             lbl_L1TvStationAantal.Text = GetAantalVanKaartInTekst("L1 TV Station", isSpeler);
             lbl_OmroepLandgraafAantal.Text = GetAantalVanKaartInTekst("Omroep Landgraaf", isSpeler);
         }
@@ -395,7 +408,11 @@ namespace Machi_Koro_Casusopdracht
         private void btn_Spelers_Click(object sender, EventArgs e)
         {
             SpelerChecken spelerChecken = new SpelerChecken(HuidigSpel.Spelers);
-            spelerChecken.ShowDialog(this);
+            if (spelerChecken.ShowDialog(this) == DialogResult.OK)
+            {
+                KaartChecken kaartChecken = new KaartChecken(spelerChecken.GetGeselecteerdeSpeler());
+                kaartChecken.ShowDialog();
+            }
         }
     }
 }

@@ -90,7 +90,7 @@ namespace Machi_Koro_Casusopdracht
                 return;
             }
             SpelersResetten();
-            Spelscherm spelscherm = new Spelscherm(instellingen.BeschikbareSpelers);
+            Spelscherm spelscherm = new Spelscherm(instellingen.BeschikbareSpelers, false);
             spelscherm.Show();
         }
 
@@ -101,6 +101,8 @@ namespace Machi_Koro_Casusopdracht
                 MessageBox.Show("Er zijn niet genoeg spelers!", "Kan toernooi niet starten", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            ToernooiScherm toernooiScherm = new ToernooiScherm(instellingen.BeschikbareSpelers);
+            toernooiScherm.Show();
         }
     }
 }

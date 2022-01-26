@@ -12,9 +12,17 @@ namespace Machi_Koro_Casusopdracht
 {
     public partial class ToernooiScherm : Form
     {
-        public ToernooiScherm()
+        Toernooi HuidigToernooi = new Toernooi();
+        public ToernooiScherm(List<Speler> beschikbareSpelers)
         {
             InitializeComponent();
+            HuidigToernooi.BeschikbareSpelers = beschikbareSpelers;
+            HuidigToernooi.SplitSpelers(beschikbareSpelers);
+            List<List<Speler>> spelerGroepen = HuidigToernooi.SpelerGroepen;
+            foreach (var spelerGroep in spelerGroepen)
+            {
+                lb_Spelergroepen.Items.Add(spelerGroep);
+            }
         }
     }
 }

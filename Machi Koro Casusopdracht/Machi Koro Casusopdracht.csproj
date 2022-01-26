@@ -67,6 +67,12 @@
     <Compile Include="Frontend\EindeSpel.Designer.cs">
       <DependentUpon>EindeSpel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\KaartChecken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\KaartChecken.Designer.cs">
+      <DependentUpon>KaartChecken.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\KaartKopen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="Backend\Kaarten\WisselKaartKiezen.cs" />
     <EmbeddedResource Include="Frontend\EindeSpel.resx">
       <DependentUpon>EindeSpel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\KaartChecken.resx">
+      <DependentUpon>KaartChecken.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\KaartKopen.resx">
       <DependentUpon>KaartKopen.cs</DependentUpon>
