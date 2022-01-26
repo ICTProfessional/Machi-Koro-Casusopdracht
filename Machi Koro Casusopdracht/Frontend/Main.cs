@@ -12,6 +12,7 @@ namespace Machi_Koro_Casusopdracht
 {
     public partial class Main : Form
     {
+        Toernooi HuidigToernooi;
         Instellingen instellingen;
         public Main()
         {
@@ -101,8 +102,32 @@ namespace Machi_Koro_Casusopdracht
                 MessageBox.Show("Er zijn niet genoeg spelers!", "Kan toernooi niet starten", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            ToernooiScherm toernooiScherm = new ToernooiScherm(instellingen.BeschikbareSpelers);
-            toernooiScherm.Show();
+            HuidigToernooi = new Toernooi();
+            HuidigToernooi.BeschikbareSpelers = instellingen.BeschikbareSpelers.ToList();
+            while (HuidigToernooi.BeschikbareSpelers.Count > 1)
+            {
+                HuidigToernooi.SplitSpelers(HuidigToernooi.BeschikbareSpelers);
+                ToernooiScherm toernooiScherm = new ToernooiScherm(HuidigToernooi);
+                if (toernooiScherm.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (var groep in HuidigToernooi.SpelerGroepen)
+                    {
+                        MessageBox.Show(String.Format("Nu zijn {0} en {1} aan de beurt!", groep[0].Naam, groep[1].Naam));
+                        Spelscherm spel = new Spelscherm(groep, true);
+                        spel.ShowDialog();
+                        if (spel.Winnaar != null)
+                        {
+                            var groep2 = groep.ToList();
+                            groep2.Remove(spel.Winnaar);
+                            Speler Verliezer = groep2[0];
+                            HuidigToernooi.BeschikbareSpelers.Remove(Verliezer);
+                        }
+                    }
+                }
+            }
+            Speler ToernooiWinnaar = HuidigToernooi.BeschikbareSpelers[0];
+            EindeSpel eindeSpel = new EindeSpel(ToernooiWinnaar.Naam, false);
+            eindeSpel.ShowDialog();
         }
     }
 }

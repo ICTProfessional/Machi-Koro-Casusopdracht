@@ -14,11 +14,29 @@ namespace Machi_Koro_Casusopdracht
             Naam = _naam;
         }
 
-        internal Kaart CalculeerKaartKopen(List<Kaart> _kaartenPot)
+        internal Kaart CalculeerKaartKopen(List<Kaart> _kaartenPot, bool heeftPrijsNodig)
         {
             Random random = new Random();
-            int randNumber = random.Next(0, _kaartenPot.Count - 1);
-            return _kaartenPot[randNumber];
+            for (int i = 0; i < 1500; i++)
+            {
+                int randNumber = random.Next(0, _kaartenPot.Count);
+                if (_kaartenPot[randNumber].Prijs < Geld || !heeftPrijsNodig)
+                {
+                    if (_kaartenPot[randNumber] is Bezienswaardigheid)
+                    {
+                        Bezienswaardigheid kaart = (Bezienswaardigheid)_kaartenPot[randNumber];
+                        if (!kaart.IsActief)
+                        {
+                            return _kaartenPot[randNumber];
+                        }
+                    }
+                    else
+                    {
+                        return _kaartenPot[randNumber];
+                    }
+                }
+            }
+            return null;
         }
 
         public Speler CalculeerSpelerKiezen(List<Speler> _spelers)

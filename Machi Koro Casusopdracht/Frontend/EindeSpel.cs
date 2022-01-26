@@ -12,10 +12,20 @@ namespace Machi_Koro_Casusopdracht
 {
     public partial class EindeSpel : Form
     {
-        public EindeSpel(string _naamWinnaar)
+        public EindeSpel(string _naamWinnaar, bool isVanToernooi)
         {
-            lbl_Winnaar.Text = String.Format("{0} heeft gewonnen!", _naamWinnaar);
             InitializeComponent();
+            lbl_Winnaar.Text = String.Format("{0} heeft gewonnen!", _naamWinnaar);
+            
+            if (isVanToernooi)
+            {
+                btn_StartScherm.Text = "Ga door naar volgend toernooi spel";
+            }
+        }
+
+        private void btn_StartScherm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

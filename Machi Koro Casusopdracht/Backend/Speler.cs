@@ -17,10 +17,10 @@ namespace Machi_Koro_Casusopdracht
         {
             Naam = _naam;
 
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Viva la Vida", 1, Iconen.Leeuw)); // 4
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Continium", 1, Iconen.Leeuw)); // 10
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Drielandenpunt", 1, Iconen.Leeuw)); // 16
-            Bezienswaardigheden.Add(new Bezienswaardigheid("Roda JC Stadion", 1, Iconen.Leeuw)); // 22
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Viva la Vida", 4, Iconen.Leeuw)); // 4
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Continium", 10, Iconen.Leeuw)); // 10
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Drielandenpunt", 16, Iconen.Leeuw)); // 16
+            Bezienswaardigheden.Add(new Bezienswaardigheid("Roda JC Stadion", 22, Iconen.Leeuw)); // 22
             ResetStats();
         }
 

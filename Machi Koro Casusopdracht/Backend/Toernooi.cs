@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
-    class Toernooi
+    public class Toernooi
     {
-               
-        public List<Speler> BeschikbareSpelers { get; set; }
-        public List<List<Speler>> SpelerGroepen { get; set; }
+
+        public List<Speler> BeschikbareSpelers { get; set; } = new List<Speler>();
+        public List<List<Speler>> SpelerGroepen { get; set; } = new List<List<Speler>>();
         public Spel HuidigSpel { get; set; }
 
         public void VervangSpel(List<Speler> _spelers)
@@ -21,19 +21,26 @@ namespace Machi_Koro_Casusopdracht
             
         public void SplitSpelers(List<Speler> _spelers)
         {
-            if(_spelers.Count % 2 != 0)
+            if (_spelers.Count % 2 != 0)
             {
-                _spelers.Add(new AI("Jacques"));
+                AI nieuweAI = new AI("Nieuwe Robot nr. " + _spelers.Count.ToString());
+                _spelers.Add(nieuweAI);
+                BeschikbareSpelers.Add(nieuweAI);
             }
-            for (int i = 0; i < _spelers.Count / 2; i++)
+            SpelerGroepen = new List<List<Speler>>();
+            _spelers = _spelers.ToList();
+            int aantalSpelers = _spelers.Count;
+            for (int i = 0; i < aantalSpelers / 2; i++)
             {
                 {
                     List<Speler> groepje = new List<Speler>();
                     groepje.Add(_spelers[0]);
                     groepje.Add(_spelers[1]);
                     SpelerGroepen.Add(groepje);
-                    _spelers.Remove(_spelers[0]);
-                    _spelers.Remove(_spelers[1]);
+                    for (int i2 = 0; i2 < 2; i2++)
+                    {
+                        _spelers.Remove(_spelers[0]);
+                    }
 
                 }
             }

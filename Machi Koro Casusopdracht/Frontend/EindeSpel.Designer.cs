@@ -50,6 +50,7 @@
             this.btn_StartScherm.TabIndex = 2;
             this.btn_StartScherm.Text = "Terug naar start scherm";
             this.btn_StartScherm.UseVisualStyleBackColor = true;
+            this.btn_StartScherm.Click += new System.EventHandler(this.btn_StartScherm_Click);
             // 
             // EindeSpel
             // 

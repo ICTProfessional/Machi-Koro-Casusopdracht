@@ -12,12 +12,16 @@ namespace Machi_Koro_Casusopdracht
 {
     public partial class Spelscherm : Form
     {
+        Random random = new Random();
         public Spel HuidigSpel;
+        public Speler Winnaar;
+        public bool isToernooiSpel;
         public Spelscherm(List<Speler> _meespelers, bool _isToernooiSpel)
         {
             InitializeComponent();
             HuidigSpel = new Spel();
             HuidigSpel.Spelers = _meespelers;
+            isToernooiSpel = _isToernooiSpel;
             BeurtBegin();
         }
 
@@ -53,6 +57,11 @@ namespace Machi_Koro_Casusopdracht
 
         private void btn_Beurteinde_Click(object sender, EventArgs e)
         {
+            BeurtEinde();
+        }
+
+        private void BeurtEinde()
+        {
             if (HuidigSpel.GetHuidigeSpeler().HeeftPretpark() && HuidigSpel.RolSysteemObject.GetZijnDobbelsteenGelijk())
             {
                 VoegEventToe(String.Format("{0} heeft twee keer hetzelfde gegooid! Je mag opnieuw dobbelen.", GetHuidigeSpelerNaam()));
@@ -66,24 +75,39 @@ namespace Machi_Koro_Casusopdracht
 
         private void btn_Dobbel_Click(object sender, EventArgs e)
         {
+            DoeDobbelen();
+        }
+
+        private void DoeDobbelen()
+        {
             Dobbel();
             if (HuidigSpel.GetHuidigeSpeler().HeeftRadioToren())
             {
-                if (MessageBox.Show(String.Format("Je hebt een {0} gerold. Wil je opnieuw rollen?", HuidigSpel.RolSysteemObject.GetDobbelWaarde()), "Roda JC Stadion melding", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (HuidigSpel.GetHuidigeSpeler() is AI)
                 {
-                    if (HuidigSpel.GetHuidigeSpeler().HeeftStation())
+                    if (random.Next(1, 4) == 1)
                     {
-                        if (MessageBox.Show(String.Format("Je gaat opnieuw rollen. Wil je met twee dobbelstenen rollen?", GetHuidigeSpelerNaam()), "Roda JC Stadion melding", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            HuidigSpel.RolSysteemObject.TweeStenen = true;
-                        }
-                        else
-                        {
-                            HuidigSpel.RolSysteemObject.TweeStenen = false;
-                        }
+                        VoegEventToe(String.Format("{0} gooit opnieuw!", GetHuidigeSpelerNaam()));
+                        Dobbel();
                     }
-                    VoegEventToe(String.Format("{0} gooit opnieuw!", GetHuidigeSpelerNaam()));
-                    Dobbel();
+                }
+                else {
+                    if (MessageBox.Show(String.Format("Je hebt een {0} gerold. Wil je opnieuw rollen?", HuidigSpel.RolSysteemObject.GetDobbelWaarde()), "Roda JC Stadion melding", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (HuidigSpel.GetHuidigeSpeler().HeeftStation())
+                        {
+                                if (MessageBox.Show(String.Format("Je gaat opnieuw rollen. Wil je met twee dobbelstenen rollen?", GetHuidigeSpelerNaam()), "Roda JC Stadion melding", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    HuidigSpel.RolSysteemObject.TweeStenen = true;
+                                }
+                                else
+                                {
+                                    HuidigSpel.RolSysteemObject.TweeStenen = false;
+                                }
+                        }
+                        VoegEventToe(String.Format("{0} gooit opnieuw!", GetHuidigeSpelerNaam()));
+                        Dobbel();
+                    }
                 }
             }
             ActiveerKaarten();
@@ -142,34 +166,55 @@ namespace Machi_Koro_Casusopdracht
                     }
                     else if (_kaart is NeemMuntKiezen)
                     {
-                        VoegEventToe(String.Format("{0} mag een speler kiezen om {1} tickets van te pakken!", HuidigSpel.GetEigenaarKaart(_kaart).Naam, _kaart.BetrokkenMunten.ToString()));
-                        SpelerChecken spelerChecken = new SpelerChecken(HuidigSpel.Spelers);
-                        if (spelerChecken.ShowDialog() == DialogResult.OK)
+                        if (!(HuidigSpel.GetHuidigeSpeler() is AI))
                         {
-                            HuidigSpel.NeemMuntKiezenEffect(spelerChecken.GetGeselecteerdeSpeler(), HuidigSpel.GetHuidigeSpeler());
+                            VoegEventToe(String.Format("{0} mag een speler kiezen om {1} tickets van te pakken!", HuidigSpel.GetEigenaarKaart(_kaart).Naam, _kaart.BetrokkenMunten.ToString()));
+                            SpelerChecken spelerChecken = new SpelerChecken(HuidigSpel.Spelers);
+                            if (spelerChecken.ShowDialog() == DialogResult.OK)
+                            {
+                                HuidigSpel.NeemMuntKiezenEffect(spelerChecken.GetGeselecteerdeSpeler(), HuidigSpel.GetHuidigeSpeler());
+                                VoegEventToe(String.Format("{0} heeft {1} tickets gepakt van {2}!", HuidigSpel.GetEigenaarKaart(_kaart).Naam, _kaart.BetrokkenMunten.ToString(), spelerChecken.GetGeselecteerdeSpeler().Naam));
+
+                            }
+                            else
+                            {
+                                VoegEventToe(String.Format("{0} heeft besloten om geen geld af te pakken!", HuidigSpel.GetEigenaarKaart(_kaart).Naam));
+                            }
                         }
                         else
                         {
-                            VoegEventToe(String.Format("{0} heeft besloten om geen geld af te pakken!", HuidigSpel.GetEigenaarKaart(_kaart).Naam));
+                            AI aiSpeler = (AI)HuidigSpel.GetHuidigeSpeler();
+                            Speler gekozenSpeler = aiSpeler.CalculeerSpelerKiezen(HuidigSpel.Spelers);
+                            HuidigSpel.NeemMuntKiezenEffect(aiSpeler, HuidigSpel.GetHuidigeSpeler());
+                            VoegEventToe(String.Format("{0} heeft {1} tickets gepakt van {2}!", HuidigSpel.GetEigenaarKaart(_kaart).Naam, _kaart.BetrokkenMunten.ToString(), gekozenSpeler.Naam));
                         }
+
                     }
                     else if (_kaart is WisselKaartKiezen)
                     {
-                        VoegEventToe(String.Format("{0} mag een speler kiezen om een kaart van te pakken!", GetHuidigeSpelerNaam()));
                         var andereSpelers = HuidigSpel.Spelers.ToList();
                         andereSpelers.Remove(HuidigSpel.GetHuidigeSpeler());
-                        SpelerChecken spelerChecken = new SpelerChecken(andereSpelers);
-                        if (spelerChecken.ShowDialog() == DialogResult.OK)
+                        if (!(HuidigSpel.GetEigenaarKaart(_kaart) is AI))
                         {
-                            KaartKiezen kaartKiezen = new KaartKiezen(spelerChecken.GetGeselecteerdeSpeler());
-                            if (kaartKiezen.ShowDialog() == DialogResult.OK)
+                            VoegEventToe(String.Format("{0} mag een speler kiezen om een kaart van te pakken!", GetHuidigeSpelerNaam()));
+                            SpelerChecken spelerChecken = new SpelerChecken(andereSpelers);
+                            if (spelerChecken.ShowDialog() == DialogResult.OK)
                             {
-                                Kaart WisselendeKaart = kaartKiezen.GetGekozenKaart();
-                                var kaartKiezen2 = new KaartKiezen(HuidigSpel.GetHuidigeSpeler());
-                                if (kaartKiezen2.ShowDialog() == DialogResult.OK)
+                                KaartKiezen kaartKiezen = new KaartKiezen(spelerChecken.GetGeselecteerdeSpeler());
+                                if (kaartKiezen.ShowDialog() == DialogResult.OK)
                                 {
-                                    VoegEventToe(String.Format("{0} heeft de kaart {1} van {2} geruilt met een {3}!", HuidigSpel.GetHuidigeSpeler().Naam, WisselendeKaart.Naam, HuidigSpel.GetEigenaarKaart(WisselendeKaart).Naam, kaartKiezen2.GetGekozenKaart().Naam));
-                                    HuidigSpel.WisselKaarten(WisselendeKaart, kaartKiezen2.GetGekozenKaart());
+                                    Kaart WisselendeKaart = kaartKiezen.GetGekozenKaart();
+                                    var kaartKiezen2 = new KaartKiezen(HuidigSpel.GetHuidigeSpeler());
+                                    if (kaartKiezen2.ShowDialog() == DialogResult.OK)
+                                    {
+                                        VoegEventToe(String.Format("{0} heeft de kaart {1} van {2} geruilt met een {3}!", HuidigSpel.GetHuidigeSpeler().Naam, WisselendeKaart.Naam, HuidigSpel.GetEigenaarKaart(WisselendeKaart).Naam, kaartKiezen2.GetGekozenKaart().Naam));
+                                        HuidigSpel.WisselKaarten(WisselendeKaart, kaartKiezen2.GetGekozenKaart());
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Je moet een kaart ruilen!", "Waarschuwing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        ActiveerKaarten();
+                                    }
                                 }
                                 else
                                 {
@@ -177,13 +222,27 @@ namespace Machi_Koro_Casusopdracht
                                     ActiveerKaarten();
                                 }
                             }
-                            else
+                        }
+                        else
+                        {
+                            AI aiSpeler = (AI)HuidigSpel.GetEigenaarKaart(_kaart);
+                            Speler targetSpeler = aiSpeler.CalculeerSpelerKiezen(andereSpelers);
+                            Kaart wisselenKaart = aiSpeler.CalculeerKaartKopen(targetSpeler.Gebouwen, false);
+                            while (wisselenKaart.Icoon == Iconen.Leeuw)
                             {
-                                MessageBox.Show("Je moet een kaart ruilen!", "Waarschuwing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                ActiveerKaarten();
+                                wisselenKaart = aiSpeler.CalculeerKaartKopen(targetSpeler.Gebouwen, false);
+                            }
+                            Kaart wisselenKaartSpeler = aiSpeler.CalculeerKaartKopen(aiSpeler.Gebouwen, false);
+                            while (wisselenKaartSpeler.Icoon == Iconen.Leeuw)
+                            {
+                                wisselenKaartSpeler = aiSpeler.CalculeerKaartKopen(aiSpeler.Gebouwen, false);
+                            }
+                            if (wisselenKaart != null && wisselenKaartSpeler != null)
+                            {
+                                VoegEventToe(String.Format("{0} heeft de kaart {1} van {2} geruilt met een {3}!", HuidigSpel.GetHuidigeSpeler().Naam, wisselenKaart.Naam, HuidigSpel.GetEigenaarKaart(wisselenKaart).Naam, wisselenKaartSpeler.Naam));
+                                HuidigSpel.WisselKaarten(wisselenKaart, wisselenKaartSpeler);
                             }
                         }
-
                     }
                     UpdateUI();
                 }
@@ -264,6 +323,44 @@ namespace Machi_Koro_Casusopdracht
             btn_Dobbel.Enabled = true;
             check_TweeDobbelstenen.Checked = false;
             check_TweeDobbelstenen.Enabled = HuidigSpel.GetHuidigeSpeler().HeeftStation();
+            if (HuidigSpel.GetHuidigeSpeler() is AI)
+            {
+                DoeAIBeurt();
+            }
+        }
+
+        private void DoeAIBeurt()
+        {
+            AI huidigeSpeler = (AI)HuidigSpel.GetHuidigeSpeler();
+            if (huidigeSpeler.HeeftStation())
+            {
+                switch (random.Next(1, 2))
+                {
+                    case 1:
+                        HuidigSpel.RolSysteemObject.TweeStenen = true;
+                        break;
+                    case 2:
+                        HuidigSpel.RolSysteemObject.TweeStenen = false;
+                        break;
+                }
+            }
+            DoeDobbelen();
+            var gekozenKaart = huidigeSpeler.CalculeerKaartKopen(huidigeSpeler.Bezienswaardigheden, true);
+            if (gekozenKaart == null)
+            {
+                gekozenKaart = huidigeSpeler.CalculeerKaartKopen(HuidigSpel.KaartenPot, true);
+                if (gekozenKaart == null)
+                {
+                    BeurtEinde();
+                    return;
+                }
+            }
+            HuidigSpel.KaartKopen(gekozenKaart.Naam);
+            VoegEventToe(String.Format("{0} heeft een \"{1}\" kaart gekocht!", GetHuidigeSpelerNaam(), gekozenKaart.Naam));
+            ControleerWinnaar();
+            if (Winnaar == null) {
+                BeurtEinde();
+            }
         }
 
         private void check_TweeDobbelstenen_CheckedChanged(object sender, EventArgs e)
@@ -286,6 +383,21 @@ namespace Machi_Koro_Casusopdracht
         private void img_Bezienswaardigheid2_Click(object sender, EventArgs e)
         {
             KaartKnopActivatie("Continium", img_Bezienswaardigheid2);
+        }
+
+        private void ControleerWinnaar()
+        {
+            foreach (var speler in HuidigSpel.Spelers)
+            {
+                if (speler.HeeftPretpark() && speler.HeeftStation() && speler.HeeftWinkelCentrum() && speler.HeeftRadioToren())
+                {
+                    // Speler heeft gewonnen!
+                    EindeSpel eindeSpel = new EindeSpel(speler.Naam, isToernooiSpel);
+                    eindeSpel.ShowDialog();
+                    Winnaar = speler;
+                    this.Visible = false;
+                }
+            }
         }
 
 
@@ -312,16 +424,7 @@ namespace Machi_Koro_Casusopdracht
                     btn_Kopen.Enabled = false;
                     lbl_KaartKopen.Visible = false;
                     VoegEventToe(String.Format("{0} heeft een \"{1}\" kaart gekocht!", GetHuidigeSpelerNaam(), _naam));
-                    foreach (var speler in HuidigSpel.Spelers)
-                    {
-                        if (speler.HeeftPretpark() && speler.HeeftStation() && speler.HeeftWinkelCentrum() && speler.HeeftRadioToren())
-                        {
-                            // Speler heeft gewonnen!
-                            EindeSpel eindeSpel = new EindeSpel(speler.Naam);
-                            eindeSpel.ShowDialog();
-                            this.Close();
-                        }
-                    }
+                    ControleerWinnaar();
                 }
             }
             else
