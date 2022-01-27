@@ -146,7 +146,7 @@ namespace Machi_Koro_Casusopdracht
             }
             else
             {
-                int a = _gekozenSpeler.Geld;
+                int a = 5 - _gekozenSpeler.Geld;
                 _gekozenSpeler.Geld = 0;
                 _eigenaarKaart.Geld += a;
             }
