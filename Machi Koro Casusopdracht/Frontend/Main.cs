@@ -108,15 +108,20 @@ namespace Machi_Koro_Casusopdracht
             {
                 HuidigToernooi.SplitSpelers(HuidigToernooi.BeschikbareSpelers);
                 ToernooiScherm toernooiScherm = new ToernooiScherm(HuidigToernooi);
+                Spelscherm spel;
                 if (toernooiScherm.ShowDialog() == DialogResult.OK)
                 {
                     foreach (var groep in HuidigToernooi.SpelerGroepen)
                     {
                         MessageBox.Show(String.Format("Nu zijn {0} en {1} aan de beurt!", groep[0].Naam, groep[1].Naam));
-                        Spelscherm spel = new Spelscherm(groep, true);
+                        spel = new Spelscherm(groep, true);
                         spel.ShowDialog();
                         if (spel.Winnaar != null)
                         {
+                            foreach (var speler in groep)
+                            {
+                                speler.ResetStats();
+                            }
                             var groep2 = groep.ToList();
                             groep2.Remove(spel.Winnaar);
                             Speler Verliezer = groep2[0];
