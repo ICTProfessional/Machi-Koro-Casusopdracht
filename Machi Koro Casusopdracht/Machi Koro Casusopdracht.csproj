@@ -202,9 +202,6 @@
     <None Include="Resources\Viva la vida.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Continium.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Drielandenpunt.png" />
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Dr joep standbeeld.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Continium.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
