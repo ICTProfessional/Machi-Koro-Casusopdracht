@@ -134,5 +134,11 @@ namespace Machi_Koro_Casusopdracht
             EindeSpel eindeSpel = new EindeSpel(ToernooiWinnaar.Naam, false);
             eindeSpel.ShowDialog();
         }
+
+        private void btn_Instellingen_Click(object sender, EventArgs e)
+        {
+            Opties opties = new Opties();
+            opties.ShowDialog();
+        }
     }
 }

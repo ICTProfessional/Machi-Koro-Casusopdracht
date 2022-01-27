@@ -81,6 +81,8 @@
             this.Controls.Add(this.check_IsRobot);
             this.Controls.Add(this.txtbox_NaamSpeler);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "SpelerToevoegen";
             this.Text = "SpelerToevoegen";
             this.ResumeLayout(false);

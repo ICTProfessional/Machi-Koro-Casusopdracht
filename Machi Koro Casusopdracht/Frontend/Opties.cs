@@ -15,6 +15,18 @@ namespace Machi_Koro_Casusopdracht
         public Opties()
         {
             InitializeComponent();
+
+        }
+
+        private void btn_Handleiding_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=-mYLss1GlcU");
+        }
+
+        private void btn_Spelregels_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.thegameroom.nl/dobbelspellen/machi-koro/");
+
         }
     }
 }

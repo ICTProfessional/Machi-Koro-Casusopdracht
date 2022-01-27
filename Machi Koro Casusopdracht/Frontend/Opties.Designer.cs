@@ -41,6 +41,7 @@
             this.btn_Spelregels.TabIndex = 0;
             this.btn_Spelregels.Text = "Spelregels";
             this.btn_Spelregels.UseVisualStyleBackColor = true;
+            this.btn_Spelregels.Click += new System.EventHandler(this.btn_Spelregels_Click);
             // 
             // btn_Handleiding
             // 
@@ -50,6 +51,7 @@
             this.btn_Handleiding.TabIndex = 1;
             this.btn_Handleiding.Text = "Handleiding";
             this.btn_Handleiding.UseVisualStyleBackColor = true;
+            this.btn_Handleiding.Click += new System.EventHandler(this.btn_Handleiding_Click);
             // 
             // label1
             // 

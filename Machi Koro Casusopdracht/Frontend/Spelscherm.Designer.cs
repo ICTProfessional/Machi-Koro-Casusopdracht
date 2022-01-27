@@ -56,6 +56,10 @@
             this.lbl_DrJoepAantal = new System.Windows.Forms.Label();
             this.check_TweeDobbelstenen = new System.Windows.Forms.CheckBox();
             this.lbl_KaartKopen = new System.Windows.Forms.Label();
+            this.lbl_GeenBezienswaardigheid1 = new System.Windows.Forms.Label();
+            this.lbl_GeenBezienswaardigheid2 = new System.Windows.Forms.Label();
+            this.lbl_GeenBezienswaardigheid3 = new System.Windows.Forms.Label();
+            this.lbl_GeenBezienswaardigheid4 = new System.Windows.Forms.Label();
             this.img_DrJoep = new System.Windows.Forms.PictureBox();
             this.img_OmroepLandgraaf = new System.Windows.Forms.PictureBox();
             this.img_L1TVStation = new System.Windows.Forms.PictureBox();
@@ -75,10 +79,7 @@
             this.img_Bezienswaardigheid3 = new System.Windows.Forms.PictureBox();
             this.img_Bezienswaardigheid2 = new System.Windows.Forms.PictureBox();
             this.img_Bezienswaardigheid1 = new System.Windows.Forms.PictureBox();
-            this.lbl_GeenBezienswaardigheid1 = new System.Windows.Forms.Label();
-            this.lbl_GeenBezienswaardigheid2 = new System.Windows.Forms.Label();
-            this.lbl_GeenBezienswaardigheid3 = new System.Windows.Forms.Label();
-            this.lbl_GeenBezienswaardigheid4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_DrJoep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_OmroepLandgraaf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_L1TVStation)).BeginInit();
@@ -102,6 +103,7 @@
             // 
             // btn_Dobbel
             // 
+            this.btn_Dobbel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Dobbel.Location = new System.Drawing.Point(776, 233);
             this.btn_Dobbel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Dobbel.Name = "btn_Dobbel";
@@ -113,6 +115,7 @@
             // 
             // btn_Kopen
             // 
+            this.btn_Kopen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Kopen.Location = new System.Drawing.Point(776, 282);
             this.btn_Kopen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Kopen.Name = "btn_Kopen";
@@ -124,6 +127,7 @@
             // 
             // btn_Beurteinde
             // 
+            this.btn_Beurteinde.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Beurteinde.Location = new System.Drawing.Point(776, 331);
             this.btn_Beurteinde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Beurteinde.Name = "btn_Beurteinde";
@@ -135,6 +139,7 @@
             // 
             // lbl_Beurt
             // 
+            this.lbl_Beurt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Beurt.AutoSize = true;
             this.lbl_Beurt.Location = new System.Drawing.Point(501, 31);
             this.lbl_Beurt.Name = "lbl_Beurt";
@@ -147,7 +152,7 @@
             // 
             this.lbl_Tickets.AutoSize = true;
             this.lbl_Tickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tickets.Location = new System.Drawing.Point(351, 42);
+            this.lbl_Tickets.Location = new System.Drawing.Point(351, 45);
             this.lbl_Tickets.Name = "lbl_Tickets";
             this.lbl_Tickets.Size = new System.Drawing.Size(19, 20);
             this.lbl_Tickets.TabIndex = 4;
@@ -155,12 +160,14 @@
             // 
             // textbox_Events
             // 
+            this.textbox_Events.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.textbox_Events.Location = new System.Drawing.Point(24, 28);
             this.textbox_Events.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textbox_Events.Name = "textbox_Events";
             this.textbox_Events.ReadOnly = true;
             this.textbox_Events.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.textbox_Events.Size = new System.Drawing.Size(297, 395);
+            this.textbox_Events.Size = new System.Drawing.Size(297, 537);
             this.textbox_Events.TabIndex = 9;
             this.textbox_Events.Text = "";
             // 
@@ -171,6 +178,7 @@
             // 
             // btn_Opties
             // 
+            this.btn_Opties.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Opties.Location = new System.Drawing.Point(795, 42);
             this.btn_Opties.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Opties.Name = "btn_Opties";
@@ -182,6 +190,7 @@
             // 
             // btn_Spelers
             // 
+            this.btn_Spelers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Spelers.Location = new System.Drawing.Point(795, 86);
             this.btn_Spelers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Spelers.Name = "btn_Spelers";
@@ -330,6 +339,7 @@
             // 
             // check_TweeDobbelstenen
             // 
+            this.check_TweeDobbelstenen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.check_TweeDobbelstenen.AutoSize = true;
             this.check_TweeDobbelstenen.Cursor = System.Windows.Forms.Cursors.Default;
             this.check_TweeDobbelstenen.Enabled = false;
@@ -350,6 +360,47 @@
             this.lbl_KaartKopen.Size = new System.Drawing.Size(169, 16);
             this.lbl_KaartKopen.TabIndex = 43;
             this.lbl_KaartKopen.Text = "Je kunt nu een kaart kopen:";
+            // 
+            // lbl_GeenBezienswaardigheid1
+            // 
+            this.lbl_GeenBezienswaardigheid1.AutoSize = true;
+            this.lbl_GeenBezienswaardigheid1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_GeenBezienswaardigheid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GeenBezienswaardigheid1.Location = new System.Drawing.Point(458, 151);
+            this.lbl_GeenBezienswaardigheid1.Name = "lbl_GeenBezienswaardigheid1";
+            this.lbl_GeenBezienswaardigheid1.Size = new System.Drawing.Size(21, 20);
+            this.lbl_GeenBezienswaardigheid1.TabIndex = 44;
+            this.lbl_GeenBezienswaardigheid1.Text = "X";
+            // 
+            // lbl_GeenBezienswaardigheid2
+            // 
+            this.lbl_GeenBezienswaardigheid2.AutoSize = true;
+            this.lbl_GeenBezienswaardigheid2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GeenBezienswaardigheid2.Location = new System.Drawing.Point(527, 151);
+            this.lbl_GeenBezienswaardigheid2.Name = "lbl_GeenBezienswaardigheid2";
+            this.lbl_GeenBezienswaardigheid2.Size = new System.Drawing.Size(21, 20);
+            this.lbl_GeenBezienswaardigheid2.TabIndex = 45;
+            this.lbl_GeenBezienswaardigheid2.Text = "X";
+            // 
+            // lbl_GeenBezienswaardigheid3
+            // 
+            this.lbl_GeenBezienswaardigheid3.AutoSize = true;
+            this.lbl_GeenBezienswaardigheid3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GeenBezienswaardigheid3.Location = new System.Drawing.Point(610, 151);
+            this.lbl_GeenBezienswaardigheid3.Name = "lbl_GeenBezienswaardigheid3";
+            this.lbl_GeenBezienswaardigheid3.Size = new System.Drawing.Size(21, 20);
+            this.lbl_GeenBezienswaardigheid3.TabIndex = 46;
+            this.lbl_GeenBezienswaardigheid3.Text = "X";
+            // 
+            // lbl_GeenBezienswaardigheid4
+            // 
+            this.lbl_GeenBezienswaardigheid4.AutoSize = true;
+            this.lbl_GeenBezienswaardigheid4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GeenBezienswaardigheid4.Location = new System.Drawing.Point(686, 151);
+            this.lbl_GeenBezienswaardigheid4.Name = "lbl_GeenBezienswaardigheid4";
+            this.lbl_GeenBezienswaardigheid4.Size = new System.Drawing.Size(21, 20);
+            this.lbl_GeenBezienswaardigheid4.TabIndex = 47;
+            this.lbl_GeenBezienswaardigheid4.Text = "X";
             // 
             // img_DrJoep
             // 
@@ -580,52 +631,21 @@
             this.img_Bezienswaardigheid1.TabStop = false;
             this.img_Bezienswaardigheid1.Click += new System.EventHandler(this.img_Bezienswaardigheid1_Click);
             // 
-            // lbl_GeenBezienswaardigheid1
+            // label1
             // 
-            this.lbl_GeenBezienswaardigheid1.AutoSize = true;
-            this.lbl_GeenBezienswaardigheid1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_GeenBezienswaardigheid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GeenBezienswaardigheid1.Location = new System.Drawing.Point(458, 151);
-            this.lbl_GeenBezienswaardigheid1.Name = "lbl_GeenBezienswaardigheid1";
-            this.lbl_GeenBezienswaardigheid1.Size = new System.Drawing.Size(21, 20);
-            this.lbl_GeenBezienswaardigheid1.TabIndex = 44;
-            this.lbl_GeenBezienswaardigheid1.Text = "X";
-            // 
-            // lbl_GeenBezienswaardigheid2
-            // 
-            this.lbl_GeenBezienswaardigheid2.AutoSize = true;
-            this.lbl_GeenBezienswaardigheid2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GeenBezienswaardigheid2.Location = new System.Drawing.Point(527, 151);
-            this.lbl_GeenBezienswaardigheid2.Name = "lbl_GeenBezienswaardigheid2";
-            this.lbl_GeenBezienswaardigheid2.Size = new System.Drawing.Size(21, 20);
-            this.lbl_GeenBezienswaardigheid2.TabIndex = 45;
-            this.lbl_GeenBezienswaardigheid2.Text = "X";
-            // 
-            // lbl_GeenBezienswaardigheid3
-            // 
-            this.lbl_GeenBezienswaardigheid3.AutoSize = true;
-            this.lbl_GeenBezienswaardigheid3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GeenBezienswaardigheid3.Location = new System.Drawing.Point(610, 151);
-            this.lbl_GeenBezienswaardigheid3.Name = "lbl_GeenBezienswaardigheid3";
-            this.lbl_GeenBezienswaardigheid3.Size = new System.Drawing.Size(21, 20);
-            this.lbl_GeenBezienswaardigheid3.TabIndex = 46;
-            this.lbl_GeenBezienswaardigheid3.Text = "X";
-            // 
-            // lbl_GeenBezienswaardigheid4
-            // 
-            this.lbl_GeenBezienswaardigheid4.AutoSize = true;
-            this.lbl_GeenBezienswaardigheid4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GeenBezienswaardigheid4.Location = new System.Drawing.Point(686, 151);
-            this.lbl_GeenBezienswaardigheid4.Name = "lbl_GeenBezienswaardigheid4";
-            this.lbl_GeenBezienswaardigheid4.Size = new System.Drawing.Size(21, 20);
-            this.lbl_GeenBezienswaardigheid4.TabIndex = 47;
-            this.lbl_GeenBezienswaardigheid4.Text = "X";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(336, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Tickets:";
             // 
             // Spelscherm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 620);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_GeenBezienswaardigheid4);
             this.Controls.Add(this.lbl_GeenBezienswaardigheid3);
             this.Controls.Add(this.lbl_GeenBezienswaardigheid2);
@@ -675,6 +695,7 @@
             this.Controls.Add(this.btn_Kopen);
             this.Controls.Add(this.btn_Dobbel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Spelscherm";
             this.Text = "Spelscherm";
             this.Load += new System.EventHandler(this.Spelscherm_Load);
@@ -753,5 +774,6 @@
         private System.Windows.Forms.Label lbl_GeenBezienswaardigheid2;
         private System.Windows.Forms.Label lbl_GeenBezienswaardigheid3;
         private System.Windows.Forms.Label lbl_GeenBezienswaardigheid4;
+        private System.Windows.Forms.Label label1;
     }
 }

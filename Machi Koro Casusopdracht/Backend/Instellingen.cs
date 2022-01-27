@@ -10,13 +10,6 @@ namespace Machi_Koro_Casusopdracht
     {
 
         // Constructor voor de test
-        public Instellingen()
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                VoegAIToe("Jan" + i.ToString());
-            }
-        }
         public List<Speler> BeschikbareSpelers { get; set; } = new List<Speler>();
 
         public void VerwijderSpeler(string _naam)
