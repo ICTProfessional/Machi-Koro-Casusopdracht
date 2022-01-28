@@ -50,15 +50,18 @@
             this.lb_Spelergroepen.Name = "lb_Spelergroepen";
             this.lb_Spelergroepen.Size = new System.Drawing.Size(217, 180);
             this.lb_Spelergroepen.TabIndex = 1;
+            this.lb_Spelergroepen.SelectedIndexChanged += new System.EventHandler(this.lb_Spelergroepen_SelectedIndexChanged);
             // 
             // btn_BeginToernooi
             // 
+            this.btn_BeginToernooi.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_BeginToernooi.Location = new System.Drawing.Point(107, 278);
             this.btn_BeginToernooi.Name = "btn_BeginToernooi";
             this.btn_BeginToernooi.Size = new System.Drawing.Size(75, 23);
             this.btn_BeginToernooi.TabIndex = 2;
             this.btn_BeginToernooi.Text = "Begin";
             this.btn_BeginToernooi.UseVisualStyleBackColor = true;
+            this.btn_BeginToernooi.Click += new System.EventHandler(this.btn_BeginToernooi_Click);
             // 
             // ToernooiScherm
             // 

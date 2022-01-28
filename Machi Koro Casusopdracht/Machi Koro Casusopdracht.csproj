@@ -67,6 +67,30 @@
     <Compile Include="Frontend\EindeSpel.Designer.cs">
       <DependentUpon>EindeSpel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\KaartChecken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\KaartChecken.Designer.cs">
+      <DependentUpon>KaartChecken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\KaartKiezen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\KaartKiezen.Designer.cs">
+      <DependentUpon>KaartKiezen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\KaartKopen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\KaartKopen.Designer.cs">
+      <DependentUpon>KaartKopen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\KaartVoorbeeld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\KaartVoorbeeld.Designer.cs">
+      <DependentUpon>KaartVoorbeeld.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +139,18 @@
     <EmbeddedResource Include="Frontend\EindeSpel.resx">
       <DependentUpon>EindeSpel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\KaartChecken.resx">
+      <DependentUpon>KaartChecken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\KaartKiezen.resx">
+      <DependentUpon>KaartKiezen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\KaartKopen.resx">
+      <DependentUpon>KaartKopen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\KaartVoorbeeld.resx">
+      <DependentUpon>KaartVoorbeeld.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +177,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -154,6 +191,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kaart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gaiazoo speeltuin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Viva la vida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drielandenpunt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roda JC stadion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parkstad theater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Job.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bufkes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mosaqua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dr Pool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Event Design Parkstad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stadscentrum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hof Van Gaia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Umc festival.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pinkpop Podium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L1 tv station.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Omroep landgraaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dr joep standbeeld.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Continium.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

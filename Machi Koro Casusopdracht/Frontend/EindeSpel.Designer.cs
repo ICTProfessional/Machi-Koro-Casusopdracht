@@ -1,4 +1,4 @@
-﻿namespace Machi_Koro_Casusopdracht.Frontend
+﻿namespace Machi_Koro_Casusopdracht
 {
     partial class EindeSpel
     {
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lbl_Winnaar = new System.Windows.Forms.Label();
-            this.btn_OpnieuwSpelen = new System.Windows.Forms.Button();
             this.btn_StartScherm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -42,23 +41,16 @@
             this.lbl_Winnaar.TabIndex = 0;
             this.lbl_Winnaar.Text = "<speler> heeft gewonnen!";
             // 
-            // btn_OpnieuwSpelen
-            // 
-            this.btn_OpnieuwSpelen.Location = new System.Drawing.Point(49, 113);
-            this.btn_OpnieuwSpelen.Name = "btn_OpnieuwSpelen";
-            this.btn_OpnieuwSpelen.Size = new System.Drawing.Size(154, 42);
-            this.btn_OpnieuwSpelen.TabIndex = 1;
-            this.btn_OpnieuwSpelen.Text = "Opnieuw spelen";
-            this.btn_OpnieuwSpelen.UseVisualStyleBackColor = true;
-            // 
             // btn_StartScherm
             // 
-            this.btn_StartScherm.Location = new System.Drawing.Point(299, 113);
+            this.btn_StartScherm.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_StartScherm.Location = new System.Drawing.Point(172, 110);
             this.btn_StartScherm.Name = "btn_StartScherm";
             this.btn_StartScherm.Size = new System.Drawing.Size(154, 42);
             this.btn_StartScherm.TabIndex = 2;
             this.btn_StartScherm.Text = "Terug naar start scherm";
             this.btn_StartScherm.UseVisualStyleBackColor = true;
+            this.btn_StartScherm.Click += new System.EventHandler(this.btn_StartScherm_Click);
             // 
             // EindeSpel
             // 
@@ -66,7 +58,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 202);
             this.Controls.Add(this.btn_StartScherm);
-            this.Controls.Add(this.btn_OpnieuwSpelen);
             this.Controls.Add(this.lbl_Winnaar);
             this.Name = "EindeSpel";
             this.Text = "EindeSpel";
@@ -78,7 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_Winnaar;
-        private System.Windows.Forms.Button btn_OpnieuwSpelen;
         private System.Windows.Forms.Button btn_StartScherm;
     }
 }

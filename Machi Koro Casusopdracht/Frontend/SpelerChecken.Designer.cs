@@ -41,6 +41,7 @@
             this.lb_SpelerLijst.Name = "lb_SpelerLijst";
             this.lb_SpelerLijst.Size = new System.Drawing.Size(185, 260);
             this.lb_SpelerLijst.TabIndex = 0;
+            this.lb_SpelerLijst.SelectedIndexChanged += new System.EventHandler(this.lb_SpelerLijst_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -53,11 +54,12 @@
             // 
             // btn_CheckGegevens
             // 
+            this.btn_CheckGegevens.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_CheckGegevens.Location = new System.Drawing.Point(76, 356);
             this.btn_CheckGegevens.Name = "btn_CheckGegevens";
             this.btn_CheckGegevens.Size = new System.Drawing.Size(153, 36);
             this.btn_CheckGegevens.TabIndex = 2;
-            this.btn_CheckGegevens.Text = "Check gegevens";
+            this.btn_CheckGegevens.Text = "OK";
             this.btn_CheckGegevens.UseVisualStyleBackColor = true;
             // 
             // SpelerChecken

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machi_Koro_Casusopdracht
 {
+    // Door: Job
     public enum Iconen
     {
         Worst,
