@@ -53,7 +53,7 @@ namespace Machi_Koro_Casusopdracht
                 KaartenPot.Add(new NeemMuntSpeler("UMC Festival", 2, Iconen.Noot, new List<int> { 3 }, 1));
                 KaartenPot.Add(new NeemMuntSpeler("Pinkpop Podium", 3, Iconen.Noot, new List<int> { 9, 10 }, 2));
             }
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 KaartenPot.Add(new WisselKaartKiezen("D'r Joep Standbeeld", 8, Iconen.Leeuw, new List<int> { 6 }, 0));
                 KaartenPot.Add(new NeemMuntIedereen("L1 TV Station", 6, Iconen.Leeuw, new List<int> { 6 }, 2));

@@ -9,6 +9,15 @@ namespace Machi_Koro_Casusopdracht
     internal class Instellingen
     {
 
+        public Instellingen()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                VoegAIToe("Jan1");
+                VoegAIToe("Jan2");
+            }
+        }
+
         // Constructor voor de test
         public List<Speler> BeschikbareSpelers { get; set; } = new List<Speler>();
 
