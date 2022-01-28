@@ -170,7 +170,11 @@ namespace Machi_Koro_Casusopdracht
                     break;
                 }
             }
-            if (geselecteerdeKaart.Prijs > GetHuidigeSpeler().Geld || geselecteerdeKaart == null)
+            if (geselecteerdeKaart == null)
+            {
+                return false;
+            }
+            if (geselecteerdeKaart.Prijs > GetHuidigeSpeler().Geld)
             {
                 return false;
             }
